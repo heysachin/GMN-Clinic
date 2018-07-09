@@ -1,0 +1,7 @@
+platform :ios, '9.0'
+
+use_frameworks!
+
+target 'SearchTextField_Example' do
+    pod 'SearchTextField', :path => '../'
+end

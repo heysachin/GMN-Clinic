@@ -1,0 +1,721 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03C38B5220F3C0F9003DB681 /* ImageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C38B5120F3C0F9003DB681 /* ImageTextField.swift */; };
+		03C38B6B20F3C24F003DB681 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B5E20F3C23B003DB681 /* SQLite.framework */; };
+		1804179D202973FE0054621D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1804179C202973FE0054621D /* Assets.xcassets */; };
+		1804179F202999600054621D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804179E2029995F0054621D /* RegisterViewController.swift */; };
+		180417A120299C0E0054621D /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180417A020299C0E0054621D /* HRToast+UIView.swift */; };
+		180417A32029B74F0054621D /* HttpClientApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180417A22029B74F0054621D /* HttpClientApi.swift */; };
+		180417A52029B76A0054621D /* GlobalURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180417A42029B76A0054621D /* GlobalURL.swift */; };
+		180417A72029B7740054621D /* SSBadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180417A62029B7740054621D /* SSBadgeButton.swift */; };
+		180A3C25203FF968004EF4D4 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A3C1E203FF967004EF4D4 /* KDCircularProgress.swift */; };
+		1811A6C42031B7F3004A6E08 /* FloatyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811A6BE2031B7F3004A6E08 /* FloatyDelegate.swift */; };
+		1811A6C52031B7F4004A6E08 /* FloatyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811A6BF2031B7F3004A6E08 /* FloatyWindow.swift */; };
+		1811A6C62031B7F4004A6E08 /* Floaty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811A6C02031B7F3004A6E08 /* Floaty.swift */; };
+		1811A6C72031B7F4004A6E08 /* FloatyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811A6C12031B7F3004A6E08 /* FloatyItem.swift */; };
+		1811A6C82031B7F4004A6E08 /* FloatyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811A6C22031B7F3004A6E08 /* FloatyManager.swift */; };
+		1811A6C92031B7F4004A6E08 /* FloatyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811A6C32031B7F3004A6E08 /* FloatyViewController.swift */; };
+		1811A6CB2031BBCC004A6E08 /* MemberDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811A6CA2031BBCC004A6E08 /* MemberDetails.swift */; };
+		18222FC020EF37570022D4C6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18222FBF20EF37570022D4C6 /* libsqlite3.0.tbd */; };
+		1828CBF120356C1100300D63 /* SPWaterProgressIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828CBEA20356C1100300D63 /* SPWaterProgressIndicatorView.swift */; };
+		1828CBF420356C4700300D63 /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828CBF320356C4700300D63 /* WaterViewController.swift */; };
+		1879B0CF2036F16D00989070 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879B0CE2036F16D00989070 /* ChangePasswordViewController.swift */; };
+		1879B0D12036F87D00989070 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879B0D02036F87D00989070 /* MyProfileViewController.swift */; };
+		187EC89D20282D2200216FC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EC89C20282D2200216FC4 /* LoginViewController.swift */; };
+		188538282017472F00D30607 /* FoodIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188538272017472F00D30607 /* FoodIntake.swift */; };
+		1885382A2017491A00D30607 /* Diet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188538292017491A00D30607 /* Diet.swift */; };
+		1885382C20174A9500D30607 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885382B20174A9500D30607 /* Foods.swift */; };
+		1885382E20174B8500D30607 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885382D20174B8500D30607 /* Activity.swift */; };
+		189B5CAB2011B11A0065168C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B5CAA2011B11A0065168C /* AppDelegate.swift */; };
+		189B5CAD2011B11A0065168C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B5CAC2011B11A0065168C /* ViewController.swift */; };
+		189B5CB02011B11A0065168C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B5CAE2011B11A0065168C /* Main.storyboard */; };
+		189B5CB32011B11A0065168C /* Gmn_Clinic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 189B5CB12011B11A0065168C /* Gmn_Clinic.xcdatamodeld */; };
+		189B5CB82011B11A0065168C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B5CB62011B11A0065168C /* LaunchScreen.storyboard */; };
+		189B5CC02011CC580065168C /* nutrition.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B5CBF2011CC580065168C /* nutrition.png */; };
+		189B5CC22011CC7C0065168C /* Logo5.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B5CC12011CC7C0065168C /* Logo5.png */; };
+		18A2765520526537007A8FA5 /* MyFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2765420526537007A8FA5 /* MyFoodTableViewController.swift */; };
+		18A2765D20526570007A8FA5 /* MyActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2765C20526570007A8FA5 /* MyActivityTableViewController.swift */; };
+		18A2765F205265F2007A8FA5 /* MyActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2765E205265F2007A8FA5 /* MyActivityTableViewCell.swift */; };
+		18A2766120526605007A8FA5 /* MyFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2766020526605007A8FA5 /* MyFoodTableViewCell.swift */; };
+		18A7F2A72033056C001FAFBB /* FoodIntakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7F2A62033056C001FAFBB /* FoodIntakeViewController.swift */; };
+		18A7F2A920330584001FAFBB /* FoodInMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7F2A820330584001FAFBB /* FoodInMenuViewController.swift */; };
+		18AE98562015B6A10020A820 /* DBHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AE98552015B6A10020A820 /* DBHandler.swift */; };
+		18AFA7D120383773009D7BF4 /* SocialMediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AFA7D020383773009D7BF4 /* SocialMediaController.swift */; };
+		18AFA7D920383FC0009D7BF4 /* DietTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AFA7D820383FC0009D7BF4 /* DietTableViewCell.swift */; };
+		18AFA7DC2038417C009D7BF4 /* DietTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AFA7DB2038417C009D7BF4 /* DietTableViewController.swift */; };
+		18B8C97720341F290005A4FA /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8C97020341F290005A4FA /* SearchTextField.swift */; };
+		18EE59C32028259E009568D4 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE59C22028259E009568D4 /* CoreDataHandler.swift */; };
+		18FC601820345FAB000B9E97 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC601720345FAB000B9E97 /* ActivityViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03C38B5D20F3C23B003DB681 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		03C38B5F20F3C23B003DB681 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		03C38B6120F3C23B003DB681 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		03C38B6320F3C23B003DB681 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		03C38B6520F3C23B003DB681 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		03C38B6720F3C23B003DB681 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		03C38B6920F3C23B003DB681 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1811A6BC2031ADC3004A6E08 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		189B5CF8201201560065168C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		03C38B5120F3C0F9003DB681 /* ImageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTextField.swift; sourceTree = "<group>"; };
+		03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "SQLite.swift-master 2/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		1804179C202973FE0054621D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1804179E2029995F0054621D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		180417A020299C0E0054621D /* HRToast+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HRToast+UIView.swift"; sourceTree = "<group>"; };
+		180417A22029B74F0054621D /* HttpClientApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpClientApi.swift; path = "../Gmn Clinic/HttpClientApi.swift"; sourceTree = "<group>"; };
+		180417A42029B76A0054621D /* GlobalURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalURL.swift; path = "../Gmn Clinic/GlobalURL.swift"; sourceTree = "<group>"; };
+		180417A62029B7740054621D /* SSBadgeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSBadgeButton.swift; path = "../Gmn Clinic/SSBadgeButton.swift"; sourceTree = "<group>"; };
+		180A3C1E203FF967004EF4D4 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KDCircularProgress.swift; path = "../KDCircularProgress-master/KDCircularProgress/KDCircularProgress.swift"; sourceTree = "<group>"; };
+		1811A6BE2031B7F3004A6E08 /* FloatyDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyDelegate.swift; path = "../Floaty-master/Sources/FloatyDelegate.swift"; sourceTree = "<group>"; };
+		1811A6BF2031B7F3004A6E08 /* FloatyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyWindow.swift; path = "../Floaty-master/Sources/FloatyWindow.swift"; sourceTree = "<group>"; };
+		1811A6C02031B7F3004A6E08 /* Floaty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Floaty.swift; path = "../Floaty-master/Sources/Floaty.swift"; sourceTree = "<group>"; };
+		1811A6C12031B7F3004A6E08 /* FloatyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyItem.swift; path = "../Floaty-master/Sources/FloatyItem.swift"; sourceTree = "<group>"; };
+		1811A6C22031B7F3004A6E08 /* FloatyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyManager.swift; path = "../Floaty-master/Sources/FloatyManager.swift"; sourceTree = "<group>"; };
+		1811A6C32031B7F3004A6E08 /* FloatyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyViewController.swift; path = "../Floaty-master/Sources/FloatyViewController.swift"; sourceTree = "<group>"; };
+		1811A6CA2031BBCC004A6E08 /* MemberDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetails.swift; sourceTree = "<group>"; };
+		18222FBF20EF37570022D4C6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		1828CBEA20356C1100300D63 /* SPWaterProgressIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPWaterProgressIndicatorView.swift; path = "../SPWaterWaveProgressIndicatorView-master/WaterWaveDemo_Swift/WaterWaveDemo_Swift/SPWaterProgressIndicatorView.swift"; sourceTree = "<group>"; };
+		1828CBF320356C4700300D63 /* WaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
+		1863A88A20C67F2F00CE684B /* SQLite.swift-master 2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SQLite.swift-master 2"; sourceTree = "<group>"; };
+		1879B0CE2036F16D00989070 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		1879B0D02036F87D00989070 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		187EC89C20282D2200216FC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		188538272017472F00D30607 /* FoodIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIntake.swift; sourceTree = "<group>"; };
+		188538292017491A00D30607 /* Diet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diet.swift; sourceTree = "<group>"; };
+		1885382B20174A9500D30607 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
+		1885382D20174B8500D30607 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		189B5CA72011B11A0065168C /* Gmn Clinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gmn Clinic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		189B5CAA2011B11A0065168C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		189B5CAC2011B11A0065168C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		189B5CAF2011B11A0065168C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		189B5CB22011B11A0065168C /* Gmn_Clinic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gmn_Clinic.xcdatamodel; sourceTree = "<group>"; };
+		189B5CB72011B11A0065168C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		189B5CB92011B11A0065168C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		189B5CBF2011CC580065168C /* nutrition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nutrition.png; sourceTree = "<group>"; };
+		189B5CC12011CC7C0065168C /* Logo5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo5.png; sourceTree = "<group>"; };
+		18A2765420526537007A8FA5 /* MyFoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodTableViewController.swift; sourceTree = "<group>"; };
+		18A2765C20526570007A8FA5 /* MyActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityTableViewController.swift; sourceTree = "<group>"; };
+		18A2765E205265F2007A8FA5 /* MyActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityTableViewCell.swift; sourceTree = "<group>"; };
+		18A2766020526605007A8FA5 /* MyFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodTableViewCell.swift; sourceTree = "<group>"; };
+		18A7F2A62033056C001FAFBB /* FoodIntakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIntakeViewController.swift; sourceTree = "<group>"; };
+		18A7F2A820330584001FAFBB /* FoodInMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInMenuViewController.swift; sourceTree = "<group>"; };
+		18AE98552015B6A10020A820 /* DBHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHandler.swift; sourceTree = "<group>"; };
+		18AFA7D020383773009D7BF4 /* SocialMediaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaController.swift; sourceTree = "<group>"; };
+		18AFA7D820383FC0009D7BF4 /* DietTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietTableViewCell.swift; sourceTree = "<group>"; };
+		18AFA7DB2038417C009D7BF4 /* DietTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietTableViewController.swift; sourceTree = "<group>"; };
+		18B8C97020341F290005A4FA /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTextField.swift; path = "../SearchTextField-master/SearchTextField/Classes/SearchTextField.swift"; sourceTree = "<group>"; };
+		18EE59C22028259E009568D4 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		18FC601720345FAB000B9E97 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		189B5CA42011B11A0065168C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03C38B6B20F3C24F003DB681 /* SQLite.framework in Frameworks */,
+				18222FC020EF37570022D4C6 /* libsqlite3.0.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03C38B5420F3C23B003DB681 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03C38B5E20F3C23B003DB681 /* SQLite.framework */,
+				03C38B6020F3C23B003DB681 /* SQLiteTests iOS.xctest */,
+				03C38B6220F3C23B003DB681 /* SQLite.framework */,
+				03C38B6420F3C23B003DB681 /* SQLiteTests Mac.xctest */,
+				03C38B6620F3C23B003DB681 /* SQLite.framework */,
+				03C38B6820F3C23B003DB681 /* SQLiteTests tvOS.xctest */,
+				03C38B6A20F3C23B003DB681 /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1828CBF220356C2400300D63 /* Water */ = {
+			isa = PBXGroup;
+			children = (
+				1828CBF320356C4700300D63 /* WaterViewController.swift */,
+			);
+			path = Water;
+			sourceTree = "<group>";
+		};
+		188538262017471500D30607 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				1811A6C02031B7F3004A6E08 /* Floaty.swift */,
+				1811A6BE2031B7F3004A6E08 /* FloatyDelegate.swift */,
+				1811A6C12031B7F3004A6E08 /* FloatyItem.swift */,
+				1811A6C22031B7F3004A6E08 /* FloatyManager.swift */,
+				1811A6C32031B7F3004A6E08 /* FloatyViewController.swift */,
+				1811A6BF2031B7F3004A6E08 /* FloatyWindow.swift */,
+				188538272017472F00D30607 /* FoodIntake.swift */,
+				18B8C97020341F290005A4FA /* SearchTextField.swift */,
+				188538292017491A00D30607 /* Diet.swift */,
+				1828CBEA20356C1100300D63 /* SPWaterProgressIndicatorView.swift */,
+				180417A42029B76A0054621D /* GlobalURL.swift */,
+				1885382B20174A9500D30607 /* Foods.swift */,
+				180417A62029B7740054621D /* SSBadgeButton.swift */,
+				180417A22029B74F0054621D /* HttpClientApi.swift */,
+				180A3C1E203FF967004EF4D4 /* KDCircularProgress.swift */,
+				1885382D20174B8500D30607 /* Activity.swift */,
+				180417A020299C0E0054621D /* HRToast+UIView.swift */,
+				1811A6CA2031BBCC004A6E08 /* MemberDetails.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		189B5C9E2011B11A0065168C = {
+			isa = PBXGroup;
+			children = (
+				188538262017471500D30607 /* Entity */,
+				18AE98542015B6810020A820 /* DBHandler */,
+				189B5CA92011B11A0065168C /* Gmn Clinic */,
+				189B5CA82011B11A0065168C /* Products */,
+				1863A88A20C67F2F00CE684B /* SQLite.swift-master 2 */,
+				189B5CF3201201500065168C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		189B5CA82011B11A0065168C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				189B5CA72011B11A0065168C /* Gmn Clinic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		189B5CA92011B11A0065168C /* Gmn Clinic */ = {
+			isa = PBXGroup;
+			children = (
+				18AFA7DA2038415D009D7BF4 /* Diet */,
+				1828CBF220356C2400300D63 /* Water */,
+				18FC601020345F95000B9E97 /* Activity */,
+				18A7F2A52033053C001FAFBB /* FoodIntake */,
+				189B5CAA2011B11A0065168C /* AppDelegate.swift */,
+				189B5CAC2011B11A0065168C /* ViewController.swift */,
+				03C38B5120F3C0F9003DB681 /* ImageTextField.swift */,
+				189B5CAE2011B11A0065168C /* Main.storyboard */,
+				189B5CB62011B11A0065168C /* LaunchScreen.storyboard */,
+				1804179C202973FE0054621D /* Assets.xcassets */,
+				189B5CB92011B11A0065168C /* Info.plist */,
+				189B5CC12011CC7C0065168C /* Logo5.png */,
+				189B5CBF2011CC580065168C /* nutrition.png */,
+				189B5CB12011B11A0065168C /* Gmn_Clinic.xcdatamodeld */,
+				187EC89C20282D2200216FC4 /* LoginViewController.swift */,
+				1804179E2029995F0054621D /* RegisterViewController.swift */,
+				1879B0CE2036F16D00989070 /* ChangePasswordViewController.swift */,
+				1879B0D02036F87D00989070 /* MyProfileViewController.swift */,
+				18AFA7D020383773009D7BF4 /* SocialMediaController.swift */,
+				18AFA7D820383FC0009D7BF4 /* DietTableViewCell.swift */,
+			);
+			path = "Gmn Clinic";
+			sourceTree = "<group>";
+		};
+		189B5CF3201201500065168C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */,
+				18222FBF20EF37570022D4C6 /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18A7F2A52033053C001FAFBB /* FoodIntake */ = {
+			isa = PBXGroup;
+			children = (
+				18A7F2A62033056C001FAFBB /* FoodIntakeViewController.swift */,
+				18A7F2A820330584001FAFBB /* FoodInMenuViewController.swift */,
+				18A2765420526537007A8FA5 /* MyFoodTableViewController.swift */,
+				18A2766020526605007A8FA5 /* MyFoodTableViewCell.swift */,
+			);
+			path = FoodIntake;
+			sourceTree = "<group>";
+		};
+		18AE98542015B6810020A820 /* DBHandler */ = {
+			isa = PBXGroup;
+			children = (
+				18AE98552015B6A10020A820 /* DBHandler.swift */,
+				18EE59C22028259E009568D4 /* CoreDataHandler.swift */,
+			);
+			path = DBHandler;
+			sourceTree = "<group>";
+		};
+		18AFA7DA2038415D009D7BF4 /* Diet */ = {
+			isa = PBXGroup;
+			children = (
+				18AFA7DB2038417C009D7BF4 /* DietTableViewController.swift */,
+			);
+			path = Diet;
+			sourceTree = "<group>";
+		};
+		18FC601020345F95000B9E97 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				18FC601720345FAB000B9E97 /* ActivityViewController.swift */,
+				18A2765C20526570007A8FA5 /* MyActivityTableViewController.swift */,
+				18A2765E205265F2007A8FA5 /* MyActivityTableViewCell.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		189B5CA62011B11A0065168C /* Gmn Clinic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 189B5CBC2011B11A0065168C /* Build configuration list for PBXNativeTarget "Gmn Clinic" */;
+			buildPhases = (
+				189B5CA32011B11A0065168C /* Sources */,
+				189B5CA42011B11A0065168C /* Frameworks */,
+				189B5CA52011B11A0065168C /* Resources */,
+				189B5CF8201201560065168C /* Embed Frameworks */,
+				1811A6BC2031ADC3004A6E08 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Gmn Clinic";
+			productName = "Gmn Clinic";
+			productReference = 189B5CA72011B11A0065168C /* Gmn Clinic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		189B5C9F2011B11A0065168C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Tsysinfo;
+				TargetAttributes = {
+					189B5CA62011B11A0065168C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 189B5CA22011B11A0065168C /* Build configuration list for PBXProject "Gmn Clinic" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 189B5C9E2011B11A0065168C;
+			productRefGroup = 189B5CA82011B11A0065168C /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 03C38B5420F3C23B003DB681 /* Products */;
+					ProjectRef = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				189B5CA62011B11A0065168C /* Gmn Clinic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		03C38B5E20F3C23B003DB681 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 03C38B5D20F3C23B003DB681 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03C38B6020F3C23B003DB681 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = 03C38B5F20F3C23B003DB681 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03C38B6220F3C23B003DB681 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 03C38B6120F3C23B003DB681 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03C38B6420F3C23B003DB681 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = 03C38B6320F3C23B003DB681 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03C38B6620F3C23B003DB681 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 03C38B6520F3C23B003DB681 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03C38B6820F3C23B003DB681 /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = 03C38B6720F3C23B003DB681 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03C38B6A20F3C23B003DB681 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 03C38B6920F3C23B003DB681 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		189B5CA52011B11A0065168C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189B5CC02011CC580065168C /* nutrition.png in Resources */,
+				189B5CB82011B11A0065168C /* LaunchScreen.storyboard in Resources */,
+				189B5CC22011CC7C0065168C /* Logo5.png in Resources */,
+				189B5CB02011B11A0065168C /* Main.storyboard in Resources */,
+				1804179D202973FE0054621D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		189B5CA32011B11A0065168C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1811A6C52031B7F4004A6E08 /* FloatyWindow.swift in Sources */,
+				18A2766120526605007A8FA5 /* MyFoodTableViewCell.swift in Sources */,
+				1879B0D12036F87D00989070 /* MyProfileViewController.swift in Sources */,
+				189B5CB32011B11A0065168C /* Gmn_Clinic.xcdatamodeld in Sources */,
+				18EE59C32028259E009568D4 /* CoreDataHandler.swift in Sources */,
+				1879B0CF2036F16D00989070 /* ChangePasswordViewController.swift in Sources */,
+				1828CBF420356C4700300D63 /* WaterViewController.swift in Sources */,
+				03C38B5220F3C0F9003DB681 /* ImageTextField.swift in Sources */,
+				180A3C25203FF968004EF4D4 /* KDCircularProgress.swift in Sources */,
+				18A2765520526537007A8FA5 /* MyFoodTableViewController.swift in Sources */,
+				1811A6C82031B7F4004A6E08 /* FloatyManager.swift in Sources */,
+				18AFA7D920383FC0009D7BF4 /* DietTableViewCell.swift in Sources */,
+				18FC601820345FAB000B9E97 /* ActivityViewController.swift in Sources */,
+				18A7F2A72033056C001FAFBB /* FoodIntakeViewController.swift in Sources */,
+				18A7F2A920330584001FAFBB /* FoodInMenuViewController.swift in Sources */,
+				1811A6C42031B7F3004A6E08 /* FloatyDelegate.swift in Sources */,
+				180417A72029B7740054621D /* SSBadgeButton.swift in Sources */,
+				1804179F202999600054621D /* RegisterViewController.swift in Sources */,
+				188538282017472F00D30607 /* FoodIntake.swift in Sources */,
+				1828CBF120356C1100300D63 /* SPWaterProgressIndicatorView.swift in Sources */,
+				1885382C20174A9500D30607 /* Foods.swift in Sources */,
+				180417A120299C0E0054621D /* HRToast+UIView.swift in Sources */,
+				189B5CAD2011B11A0065168C /* ViewController.swift in Sources */,
+				1885382A2017491A00D30607 /* Diet.swift in Sources */,
+				1811A6C62031B7F4004A6E08 /* Floaty.swift in Sources */,
+				18A2765D20526570007A8FA5 /* MyActivityTableViewController.swift in Sources */,
+				18AFA7D120383773009D7BF4 /* SocialMediaController.swift in Sources */,
+				1811A6C72031B7F4004A6E08 /* FloatyItem.swift in Sources */,
+				18AE98562015B6A10020A820 /* DBHandler.swift in Sources */,
+				1885382E20174B8500D30607 /* Activity.swift in Sources */,
+				180417A52029B76A0054621D /* GlobalURL.swift in Sources */,
+				180417A32029B74F0054621D /* HttpClientApi.swift in Sources */,
+				1811A6CB2031BBCC004A6E08 /* MemberDetails.swift in Sources */,
+				187EC89D20282D2200216FC4 /* LoginViewController.swift in Sources */,
+				189B5CAB2011B11A0065168C /* AppDelegate.swift in Sources */,
+				18A2765F205265F2007A8FA5 /* MyActivityTableViewCell.swift in Sources */,
+				18AFA7DC2038417C009D7BF4 /* DietTableViewController.swift in Sources */,
+				1811A6C92031B7F4004A6E08 /* FloatyViewController.swift in Sources */,
+				18B8C97720341F290005A4FA /* SearchTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		189B5CAE2011B11A0065168C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				189B5CAF2011B11A0065168C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		189B5CB62011B11A0065168C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				189B5CB72011B11A0065168C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		189B5CBA2011B11A0065168C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		189B5CBB2011B11A0065168C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		189B5CBD2011B11A0065168C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJF528ZY7W;
+				INFOPLIST_FILE = "Gmn Clinic/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tsysinfo.GmnClinic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		189B5CBE2011B11A0065168C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJF528ZY7W;
+				INFOPLIST_FILE = "Gmn Clinic/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tsysinfo.GmnClinic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		189B5CA22011B11A0065168C /* Build configuration list for PBXProject "Gmn Clinic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				189B5CBA2011B11A0065168C /* Debug */,
+				189B5CBB2011B11A0065168C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		189B5CBC2011B11A0065168C /* Build configuration list for PBXNativeTarget "Gmn Clinic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				189B5CBD2011B11A0065168C /* Debug */,
+				189B5CBE2011B11A0065168C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		189B5CB12011B11A0065168C /* Gmn_Clinic.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				189B5CB22011B11A0065168C /* Gmn_Clinic.xcdatamodel */,
+			);
+			currentVersion = 189B5CB22011B11A0065168C /* Gmn_Clinic.xcdatamodel */;
+			path = Gmn_Clinic.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 189B5C9F2011B11A0065168C /* Project object */;
+}
