@@ -75,6 +75,81 @@ class CoreDataHandler: NSObject {
         
     }
     
+    class func CartMemberObject(ProductId:String, ProductName:String,  Description:String, Price:String, Branchno:String, OutOfStock:String) -> Bool
+    {
+        let context=CoreDataHandler.getContext()
+        let entity = NSEntityDescription.entity(forEntityName: "CartEntity", in: context)
+        let managedObject = NSManagedObject(entity: entity! , insertInto: context)
+        managedObject.setValue(ProductId, forKey: "productId")
+        managedObject.setValue(ProductName, forKey: "productName")
+        managedObject.setValue(Description, forKey: "desc")
+        managedObject.setValue(Price, forKey: "price")
+        managedObject.setValue(Branchno, forKey: "branchno")
+        managedObject.setValue(OutOfStock, forKey: "outOfStock")
+        
+        do{
+            
+            try context.save()
+            return true
+            
+        }catch
+        {
+            print(error)
+            
+            return false
+        }
+        
+    }
+    
+    class func CartMemberDelete(ProductId:String, ProductName:String,  Description:String, Price:String, Branchno:String, OutOfStock:String) -> Bool
+    {
+        let context=CoreDataHandler.getContext()
+        let entity = NSEntityDescription.entity(forEntityName: "CartEntity", in: context)
+        let managedObject = NSManagedObject(entity: entity! , insertInto: context)
+        managedObject.setValue(ProductId, forKey: "productId")
+        managedObject.setValue(ProductName, forKey: "productName")
+        managedObject.setValue(Description, forKey: "desc")
+        managedObject.setValue(Price, forKey: "price")
+        managedObject.setValue(Branchno, forKey: "branchno")
+        managedObject.setValue(OutOfStock, forKey: "outOfStock")
+        
+        do{
+            
+            try context.delete(managedObject)
+            return true
+            
+        }catch
+        {
+            print(error)
+            
+            return false
+        }
+        
+    }
+    
+    
+    class func fetchCartObject() -> [CartEntity]?
+    {
+        let context=getContext()
+        var myEntity:[CartEntity]?=nil
+        
+        do
+        {
+            myEntity = try context.fetch(CartEntity.fetchRequest())
+            
+            return myEntity
+            
+        }catch{
+            print(error)
+            return myEntity
+        }
+        
+        
+        
+        
+    }
+    
+    
     class func featchObject() -> [LoginEntity]?
     {
         let context=getContext()
