@@ -207,6 +207,7 @@ class LoginViewController: UIViewController {
                             
                             if log.MemberName != "No"
                             {
+                                print(log)
                                 DispatchQueue.main.async {
                                     
                                     if  self.showProgress(show: false) {

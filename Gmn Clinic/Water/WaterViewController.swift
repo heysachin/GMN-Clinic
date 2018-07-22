@@ -79,6 +79,8 @@ class WaterViewController: UIViewController {
        getData()
     }
     @IBAction func onMinusClick(_ sender: Any) {
+        _ = showProgress(show: true)
+        Sub_Water()
     }
     @IBOutlet weak var countLable: UILabel!
     
@@ -150,23 +152,24 @@ class WaterViewController: UIViewController {
         let c = DBHandler.instance.getWaterCount(date: TodayDate())
         if c>=14{
             lableTarget.text = "Target Achived"
+        }else{
+            lableTarget.text = "Have your next glass of water after 120 minutes"
         }
         
         let pers = Double(c)/14.0*100;
         updateWawe(percent: Int64(pers))
         if c != 0
         {
-            countLable.text = "\(c)/14"
+            countLable.text = "\(14-c) Glasses Left"
 
         }else{
             
-            countLable.text = "0/14"
+            countLable.text = "14 Glasses Left"
         }
         
     }
+    
     func getData()  {
-        
-        
         
         let url="\(GlobalURL)/SaveWater?MemberNo=\(memberNo)&Date_Time=\(self.getCurrentDateTime())&BranchNo=1&Water=1"
         
@@ -174,14 +177,12 @@ class WaterViewController: UIViewController {
         
         print(replaced)
         
-        
         HttpClientApi.instance().makeAPICall(url: replaced,  method: .GET, success: { (data, response, error) in
-            
             
             if let data = data, let stringResponse = String(data: data, encoding: .utf8) {
                 
                 // received from a network request, for example
-                let c = String(stringResponse)
+                let c = stringResponse.characters
                 let r = c.index(c.startIndex, offsetBy: stringResponse.index(of: ":")!+2)..<c.index(c.endIndex, offsetBy: -2)
                 let substring = stringResponse[r]
                 let data  = substring.replacingOccurrences(of: "\\", with: "", options: NSString.CompareOptions.literal, range: nil)
@@ -194,7 +195,6 @@ class WaterViewController: UIViewController {
                         {
                             DispatchQueue.main.async{
                              
-                                
                                 _ = self.showProgress(show: false)
                                 
                                 self.view.makeToast(message: "Added Water")
@@ -204,13 +204,8 @@ class WaterViewController: UIViewController {
                             }
                         }else{
                             
-                            
-                            
                         }
-                        
-                        
                     }
-                    
                     
                 }catch{
                     DispatchQueue.main.async{
@@ -221,12 +216,6 @@ class WaterViewController: UIViewController {
                         self.showAlert(title: "Alret", msg: "Failed...Please try again")
                     }
                 }
-                
-                
-                
-                
-                
-                
                 
             }
             
@@ -241,14 +230,71 @@ class WaterViewController: UIViewController {
             }
         })
         
+    }
+    
+    func Sub_Water()  {
         
+        let url="\(GlobalURL)/SaveWater?MemberNo=\(memberNo)&Date_Time=\(self.getCurrentDateTime())&BranchNo=1&Water=-1"
         
+        let replaced = url.replacingOccurrences(of: " ", with: "%20")
         
+        print(replaced)
         
-        
-        
+        HttpClientApi.instance().makeAPICall(url: replaced,  method: .GET, success: { (data, response, error) in
+            
+            if let data = data, let stringResponse = String(data: data, encoding: .utf8) {
+                
+                // received from a network request, for example
+                let c = stringResponse.characters
+                let r = c.index(c.startIndex, offsetBy: stringResponse.index(of: ":")!+2)..<c.index(c.endIndex, offsetBy: -2)
+                let substring = stringResponse[r]
+                let data  = substring.replacingOccurrences(of: "\\", with: "", options: NSString.CompareOptions.literal, range: nil)
+                let ta = data.data(using: .utf8)
+                print(substring)
+                do{
+                    self.stat = try JSONDecoder().decode([FoodStatus].self, from: ta!)
+                    for log in self.stat{
+                        if log.Status == "Success"
+                        {
+                            DispatchQueue.main.async{
+                                
+                                _ = self.showProgress(show: false)
+                                
+                                self.view.makeToast(message: "Deleted Water")
+                                let d = DBHandler.instance.getAllWaterCount()
+                                _ =  DBHandler.instance.delWaterIntake(wid: d+2, wtime: self.getCurrentTime(), wdate: self.TodayDate(), wwater: -1)
+                                self.updateWater()
+                            }
+                        }else{
+                            
+                        }
+                    }
+                    
+                }catch{
+                    DispatchQueue.main.async{
+                        if self.showProgress(show: false)
+                        {
+                            print("exception \(error)")
+                        }
+                        self.showAlert(title: "Alert", msg: "Failed...Please try again")
+                    }
+                }
+                
+            }
+            
+            // API call is Successfull
+            
+        }, failure: { (data, response, error) in
+            print(response ?? "def")
+            DispatchQueue.main.async {
+                if  self.showProgress(show: false){
+                    self.showAlert(title: "Server Error", msg: "Something went wrong. Please try again")
+                }
+            }
+        })
         
     }
+    
     public func getCurrentTime() -> String
         
     {

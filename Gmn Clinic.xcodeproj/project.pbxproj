@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03A06FBC20F6AD670088F0C3 /* Shopping in Resources */ = {isa = PBXBuildFile; fileRef = 03A06FBB20F6AD660088F0C3 /* Shopping */; };
 		03C38B5220F3C0F9003DB681 /* ImageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C38B5120F3C0F9003DB681 /* ImageTextField.swift */; };
 		03C38B6B20F3C24F003DB681 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B5E20F3C23B003DB681 /* SQLite.framework */; };
+		03C38B7A20F4A0CD003DB681 /* Floaty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B7220F4A0C6003DB681 /* Floaty.framework */; };
+		03C38B8120F4A1AD003DB681 /* KDCircularProgress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B8020F4A19F003DB681 /* KDCircularProgress.framework */; };
 		1804179D202973FE0054621D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1804179C202973FE0054621D /* Assets.xcassets */; };
 		1804179F202999600054621D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804179E2029995F0054621D /* RegisterViewController.swift */; };
 		180417A120299C0E0054621D /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180417A020299C0E0054621D /* HRToast+UIView.swift */; };
@@ -105,6 +108,20 @@
 			remoteGlobalIDString = A121AC451CA35C79005A31D1;
 			remoteInfo = "SQLite watchOS";
 		};
+		03C38B7120F4A0C6003DB681 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B6D20F4A0C6003DB681 /* Floaty.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B65A2E531D5975130045483D;
+			remoteInfo = Floaty;
+		};
+		03C38B7F20F4A19F003DB681 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B7B20F4A19F003DB681 /* KDCircularProgress.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC5B0BE81D92F4FA00B43506;
+			remoteInfo = "KDCircularProgress iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -131,8 +148,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03A06FBB20F6AD660088F0C3 /* Shopping */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shopping; sourceTree = "<group>"; };
 		03C38B5120F3C0F9003DB681 /* ImageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTextField.swift; sourceTree = "<group>"; };
 		03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "SQLite.swift-master 2/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		03C38B6D20F4A0C6003DB681 /* Floaty.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Floaty.xcodeproj; path = "Floaty-master/Floaty.xcodeproj"; sourceTree = "<group>"; };
+		03C38B7B20F4A19F003DB681 /* KDCircularProgress.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KDCircularProgress.xcodeproj; path = "KDCircularProgress-master/KDCircularProgress.xcodeproj"; sourceTree = "<group>"; };
 		1804179C202973FE0054621D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1804179E2029995F0054621D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		180417A020299C0E0054621D /* HRToast+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HRToast+UIView.swift"; sourceTree = "<group>"; };
@@ -187,6 +207,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C38B8120F4A1AD003DB681 /* KDCircularProgress.framework in Frameworks */,
+				03C38B7A20F4A0CD003DB681 /* Floaty.framework in Frameworks */,
 				03C38B6B20F3C24F003DB681 /* SQLite.framework in Frameworks */,
 				18222FC020EF37570022D4C6 /* libsqlite3.0.tbd in Frameworks */,
 			);
@@ -205,6 +227,22 @@
 				03C38B6620F3C23B003DB681 /* SQLite.framework */,
 				03C38B6820F3C23B003DB681 /* SQLiteTests tvOS.xctest */,
 				03C38B6A20F3C23B003DB681 /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03C38B6E20F4A0C6003DB681 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03C38B7220F4A0C6003DB681 /* Floaty.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03C38B7C20F4A19F003DB681 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03C38B8020F4A19F003DB681 /* KDCircularProgress.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -279,6 +317,7 @@
 				189B5CC12011CC7C0065168C /* Logo5.png */,
 				189B5CBF2011CC580065168C /* nutrition.png */,
 				189B5CB12011B11A0065168C /* Gmn_Clinic.xcdatamodeld */,
+				03A06FBB20F6AD660088F0C3 /* Shopping */,
 				187EC89C20282D2200216FC4 /* LoginViewController.swift */,
 				1804179E2029995F0054621D /* RegisterViewController.swift */,
 				1879B0CE2036F16D00989070 /* ChangePasswordViewController.swift */,
@@ -292,6 +331,8 @@
 		189B5CF3201201500065168C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03C38B7B20F4A19F003DB681 /* KDCircularProgress.xcodeproj */,
+				03C38B6D20F4A0C6003DB681 /* Floaty.xcodeproj */,
 				03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */,
 				18222FBF20EF37570022D4C6 /* libsqlite3.0.tbd */,
 			);
@@ -387,6 +428,14 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 03C38B6E20F4A0C6003DB681 /* Products */;
+					ProjectRef = 03C38B6D20F4A0C6003DB681 /* Floaty.xcodeproj */;
+				},
+				{
+					ProductGroup = 03C38B7C20F4A19F003DB681 /* Products */;
+					ProjectRef = 03C38B7B20F4A19F003DB681 /* KDCircularProgress.xcodeproj */;
+				},
+				{
 					ProductGroup = 03C38B5420F3C23B003DB681 /* Products */;
 					ProjectRef = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
 				},
@@ -448,6 +497,20 @@
 			remoteRef = 03C38B6920F3C23B003DB681 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		03C38B7220F4A0C6003DB681 /* Floaty.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Floaty.framework;
+			remoteRef = 03C38B7120F4A0C6003DB681 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03C38B8020F4A19F003DB681 /* KDCircularProgress.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KDCircularProgress.framework;
+			remoteRef = 03C38B7F20F4A19F003DB681 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -459,6 +522,7 @@
 				189B5CB82011B11A0065168C /* LaunchScreen.storyboard in Resources */,
 				189B5CC22011CC7C0065168C /* Logo5.png in Resources */,
 				189B5CB02011B11A0065168C /* Main.storyboard in Resources */,
+				03A06FBC20F6AD670088F0C3 /* Shopping in Resources */,
 				1804179D202973FE0054621D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

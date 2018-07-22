@@ -159,11 +159,26 @@ class DBHandler{
         do {
             
             let myid = try db!.run(waterin.insert(water_id <- wid, water_time <- wtime, water_date <- wdate,water <- wwater))
-            print("water addedd")
+            print("water Deleted")
             print(myid)
             return myid
         } catch {
             print("Insert failed")
+            print(error)
+            return -1
+            
+        }
+    }
+    
+    func delWaterIntake(wid: Int64,wtime: String,wdate: String, wwater: Int64) -> Int64? {
+        do {
+            let delete = waterin.filter(water_id == wid).limit(1)
+            let myid = try db!.run(delete.delete())
+            print("water Deleted")
+            print(myid)
+            return 1
+        } catch {
+            print("Delete failed")
             print(error)
             return -1
             

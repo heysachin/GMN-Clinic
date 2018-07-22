@@ -116,7 +116,7 @@ class FoodIntakeViewController: UIViewController {
       
 
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: "food.png"), for: UIControlState.normal)
+        button.setTitle("History", for: UIControlState.normal)
         button.addTarget(self, action:#selector(FoodIntakeViewController
             .callBackMethod), for:.touchUpInside)
         button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30) //CGRectMake(0, 0, 30, 30)

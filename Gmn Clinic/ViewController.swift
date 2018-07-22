@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var spinnerIndicator: UIActivityIndicatorView!
     var data:[LoginEntity]?
     var isLogged:Bool? = false
-     var dietStruct = [DietStruct]()
+    var dietStruct = [DietStruct]()
    
     var memberNo : String = ""
     func showProgress(show:Bool) -> Bool {
@@ -66,6 +66,60 @@ class ViewController: UIViewController {
         return UIColor(red:red, green:green, blue:blue, alpha:1.0)
     }
     
+    
+    
+    
+    
+    
+    
+    @IBOutlet weak var mobile1: UITextField!
+    @IBOutlet weak var mobile2: UITextField!
+    @IBOutlet weak var email1: UITextField!
+    @IBOutlet weak var email2: UITextField!
+    @IBOutlet weak var address: UITextField!
+    
+    
+    @IBOutlet weak var stack1: UIStackView!
+    @IBOutlet weak var stack2: UIStackView!
+    @IBOutlet weak var stack3: UIStackView!
+    
+    @IBOutlet weak var ProfileView: UIView!
+    @IBOutlet weak var ShoppingView: UIView!
+    @IBOutlet weak var ShoppingCardView: UIView!
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            ShoppingView.isHidden = false
+            ProfileView.isHidden = true
+            stack1.isHidden = true
+            stack2.isHidden = true
+            stack3.isHidden = true
+        case 1:
+            ShoppingView.isHidden = true
+            ProfileView.isHidden = true
+            stack1.isHidden = false
+            stack2.isHidden = false
+            stack3.isHidden = false
+        case 2:
+            ShoppingView.isHidden = true
+            ProfileView.isHidden = false
+            stack1.isHidden = true
+            stack2.isHidden = true
+            stack3.isHidden = true
+        default:
+            break;
+        }
+    }
+    
+    
+    
+    
+    @IBOutlet weak var main_menu_view: UIView!
+    
     @IBOutlet weak var textMyName: UILabel!
     
     @IBAction func onClickFoodReminder(_ sender: Any) {
@@ -93,7 +147,7 @@ class ViewController: UIViewController {
     }
     @IBAction func onAboveClick(_ sender: Any) {
         
-        
+        print("On Above Clicked")
         
     }
     @IBAction func onYoutubeClick(_ sender: Any) {
@@ -146,12 +200,44 @@ class ViewController: UIViewController {
         nav?.barTintColor = uicolorFromHex(rgbValue: 0x4ABFD4)
         nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         self.navigationItem.setHidesBackButton(true, animated:true);
+        
         for i in data! {
+            print(i)
             self.title = "Gmn Clinic"
             isLogged = i.isloggedin
             textMyName.text = i.empname
             memberNo=i.empno!
-           
+        }
+        var data2:[MemberEntity]?
+        data2=CoreDataHandler.featchMemberObject()
+        for i in data2! {
+            if i.mobile1 == "" {
+                mobile1.text = "Mobile 1 - Not Specified"
+            }else{
+                mobile1.text = i.mobile1
+            }
+            if i.mobile2 == "" {
+                mobile2.text = "Mobile 2 - Not Specified"
+            }else{
+                mobile2.text = i.mobile2
+            }
+
+            if i.email1 == "" {
+                email1.text = "Email 1 - Not Specified"
+            }else{
+                email1.text = i.email1
+            }
+            if i.email2 == "" {
+                email2.text = "Email 2 - Not Specified"
+            }else{
+                email2.text = i.email2
+            }
+            if i.address == "" {
+                address.text = "Address - Not Specified"
+            }else{
+                address.text = i.address
+            }
+            
         }
         
        // DBHandler.instance.addDiet(did: 1, dtime: "12:22", dfood: "Eating the 100 gm Poha", ddate: "17/02/2018")

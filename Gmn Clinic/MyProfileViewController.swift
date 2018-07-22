@@ -66,6 +66,7 @@ class MyProfileViewController: UIViewController {
         data=CoreDataHandler.featchMemberObject()
         
         for i in data! {
+            print(i)
             name.text = i.member_name
             number.text = i.mobile1
             email.text =  i.email1
