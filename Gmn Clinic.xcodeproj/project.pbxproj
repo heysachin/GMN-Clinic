@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		03B1586B21052AB800B33E25 /* cartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1586A21052AB800B33E25 /* cartViewController.swift */; };
 		03B158762105445D00B33E25 /* FoodReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B158752105445D00B33E25 /* FoodReminderViewController.swift */; };
+		03B158782105CBB500B33E25 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B158772105CBB500B33E25 /* AboutViewController.swift */; };
 		03C38B5220F3C0F9003DB681 /* ImageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C38B5120F3C0F9003DB681 /* ImageTextField.swift */; };
 		03C38B6B20F3C24F003DB681 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B5E20F3C23B003DB681 /* SQLite.framework */; };
 		03C38B7A20F4A0CD003DB681 /* Floaty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B7220F4A0C6003DB681 /* Floaty.framework */; };
@@ -152,6 +153,7 @@
 /* Begin PBXFileReference section */
 		03B1586A21052AB800B33E25 /* cartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartViewController.swift; sourceTree = "<group>"; };
 		03B158752105445D00B33E25 /* FoodReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReminderViewController.swift; sourceTree = "<group>"; };
+		03B158772105CBB500B33E25 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		03C38B5120F3C0F9003DB681 /* ImageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTextField.swift; sourceTree = "<group>"; };
 		03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "SQLite.swift-master 2/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		03C38B6D20F4A0C6003DB681 /* Floaty.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Floaty.xcodeproj; path = "Floaty-master/Floaty.xcodeproj"; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				1879B0D02036F87D00989070 /* MyProfileViewController.swift */,
 				18AFA7D020383773009D7BF4 /* SocialMediaController.swift */,
 				18AFA7D820383FC0009D7BF4 /* DietTableViewCell.swift */,
+				03B158772105CBB500B33E25 /* AboutViewController.swift */,
 			);
 			path = "Gmn Clinic";
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				1811A6CB2031BBCC004A6E08 /* MemberDetails.swift in Sources */,
 				187EC89D20282D2200216FC4 /* LoginViewController.swift in Sources */,
 				03B158762105445D00B33E25 /* FoodReminderViewController.swift in Sources */,
+				03B158782105CBB500B33E25 /* AboutViewController.swift in Sources */,
 				189B5CAB2011B11A0065168C /* AppDelegate.swift in Sources */,
 				18A2765F205265F2007A8FA5 /* MyActivityTableViewCell.swift in Sources */,
 				18AFA7DC2038417C009D7BF4 /* DietTableViewController.swift in Sources */,

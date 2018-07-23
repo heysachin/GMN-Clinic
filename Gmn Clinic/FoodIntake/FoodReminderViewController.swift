@@ -116,13 +116,16 @@ class FoodReminderViewController: UIViewController,UITableViewDelegate,UITableVi
                 let c = stringResponse.characters
                 let r = c.index(c.startIndex, offsetBy: stringResponse.index(of: ":")!+2)..<c.index(c.endIndex, offsetBy: -2)
                 let substring = stringResponse[r]
+                print(substring)
                 let data  = substring.replacingOccurrences(of: "\\", with: "", options: NSString.CompareOptions.literal, range: nil)
                 let ta = data.data(using: .utf8)
+                print(data)
+                print(ta)
                 do{
                     self.Reminders = try JSONDecoder().decode([FoodReminder].self, from: ta!)
-//                        for Reminder in self.Reminders{
-//                            print(Reminder)
-//                        }
+                        for Reminder in self.Reminders{
+                            print(Reminder)
+                        }
 
                     self.tableView.reloadData()
                     _ = self.showProgress(show: false)

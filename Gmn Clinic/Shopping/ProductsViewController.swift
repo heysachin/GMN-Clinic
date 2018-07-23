@@ -97,9 +97,9 @@ class ProductsViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 let ta = data.data(using: .utf8)
                 do{
                     self.products = try JSONDecoder().decode([Product].self, from: ta!)
-//                    for product in self.products{
-//                        print(product)
-//                    }
+                    for product in self.products{
+                        print(product)
+                    }
                     
                     self.tableView.reloadData()
                     _ = self.showProgress(show: false)

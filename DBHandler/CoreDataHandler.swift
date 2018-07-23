@@ -104,25 +104,32 @@ class CoreDataHandler: NSObject {
     class func CartMemberDelete(ProductId:String, ProductName:String,  Description:String, Price:String, Branchno:String, OutOfStock:String) -> Bool
     {
         let context=CoreDataHandler.getContext()
-        let entity = NSEntityDescription.entity(forEntityName: "CartEntity", in: context)
-        let managedObject = NSManagedObject(entity: entity! , insertInto: context)
-        managedObject.setValue(ProductId, forKey: "productId")
-        managedObject.setValue(ProductName, forKey: "productName")
-        managedObject.setValue(Description, forKey: "desc")
-        managedObject.setValue(Price, forKey: "price")
-        managedObject.setValue(Branchno, forKey: "branchno")
-        managedObject.setValue(OutOfStock, forKey: "outOfStock")
+//        let entity = NSEntityDescription.entity(forEntityName: "CartEntity", in: context)
+
         
-        do{
-            
-            try context.delete(managedObject)
+        
+        let moc = getContext()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CartEntity")
+        fetchRequest.predicate = NSPredicate.init(format: "productId==\(ProductId)")
+        
+        let result = try? moc.fetch(fetchRequest)
+        let resultData = result as! [CartEntity]
+        
+        for object in resultData {
+            moc.delete(object)
+        }
+        
+        do {
+            try moc.save()
+            print("saved!")
             return true
-            
-        }catch
-        {
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+                return false
+        } catch {
             print(error)
-            
             return false
+            
         }
         
     }
