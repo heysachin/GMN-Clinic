@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0370AB85210C57B6001D4131 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0370AB84210C57B6001D4131 /* libsqlite3.tbd */; };
+		0370AB86210C5946001D4131 /* KDCircularProgress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B8020F4A19F003DB681 /* KDCircularProgress.framework */; };
+		0370AB87210C5946001D4131 /* KDCircularProgress.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B8020F4A19F003DB681 /* KDCircularProgress.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0370AB8A210C594E001D4131 /* Floaty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B7220F4A0C6003DB681 /* Floaty.framework */; };
+		0370AB8B210C594E001D4131 /* Floaty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B7220F4A0C6003DB681 /* Floaty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0370AB8E210C5958001D4131 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B5E20F3C23B003DB681 /* SQLite.framework */; };
+		0370AB8F210C5958001D4131 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B5E20F3C23B003DB681 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03B1586B21052AB800B33E25 /* cartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1586A21052AB800B33E25 /* cartViewController.swift */; };
 		03B158762105445D00B33E25 /* FoodReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B158752105445D00B33E25 /* FoodReminderViewController.swift */; };
 		03B158782105CBB500B33E25 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B158772105CBB500B33E25 /* AboutViewController.swift */; };
@@ -29,7 +36,6 @@
 		1811A6C82031B7F4004A6E08 /* FloatyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811A6C22031B7F3004A6E08 /* FloatyManager.swift */; };
 		1811A6C92031B7F4004A6E08 /* FloatyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811A6C32031B7F3004A6E08 /* FloatyViewController.swift */; };
 		1811A6CB2031BBCC004A6E08 /* MemberDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811A6CA2031BBCC004A6E08 /* MemberDetails.swift */; };
-		18222FC020EF37570022D4C6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18222FBF20EF37570022D4C6 /* libsqlite3.0.tbd */; };
 		1828CBF120356C1100300D63 /* SPWaterProgressIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828CBEA20356C1100300D63 /* SPWaterProgressIndicatorView.swift */; };
 		1828CBF420356C4700300D63 /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828CBF320356C4700300D63 /* WaterViewController.swift */; };
 		1879B0CF2036F16D00989070 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879B0CE2036F16D00989070 /* ChangePasswordViewController.swift */; };
@@ -62,6 +68,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0370AB88210C5946001D4131 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B7B20F4A19F003DB681 /* KDCircularProgress.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC5B0BE71D92F4FA00B43506;
+			remoteInfo = "KDCircularProgress iOS";
+		};
+		0370AB8C210C594E001D4131 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B6D20F4A0C6003DB681 /* Floaty.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B65A2E521D5975130045483D;
+			remoteInfo = Floaty;
+		};
+		0370AB90210C5958001D4131 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
 		03C38B5D20F3C23B003DB681 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */;
@@ -144,6 +171,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0370AB87210C5946001D4131 /* KDCircularProgress.framework in Embed Frameworks */,
+				0370AB8B210C594E001D4131 /* Floaty.framework in Embed Frameworks */,
+				0370AB8F210C5958001D4131 /* SQLite.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +181,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0370AB80210C5563001D4131 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		0370AB84210C57B6001D4131 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libsqlite3.tbd; sourceTree = "<group>"; };
+		0370AB92210C596D001D4131 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libsqlite3.tbd; sourceTree = "<group>"; };
 		03B1586A21052AB800B33E25 /* cartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartViewController.swift; sourceTree = "<group>"; };
 		03B158752105445D00B33E25 /* FoodReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodReminderViewController.swift; sourceTree = "<group>"; };
 		03B158772105CBB500B33E25 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +206,6 @@
 		1811A6C22031B7F3004A6E08 /* FloatyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyManager.swift; path = "../Floaty-master/Sources/FloatyManager.swift"; sourceTree = "<group>"; };
 		1811A6C32031B7F3004A6E08 /* FloatyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyViewController.swift; path = "../Floaty-master/Sources/FloatyViewController.swift"; sourceTree = "<group>"; };
 		1811A6CA2031BBCC004A6E08 /* MemberDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetails.swift; sourceTree = "<group>"; };
-		18222FBF20EF37570022D4C6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		1828CBEA20356C1100300D63 /* SPWaterProgressIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPWaterProgressIndicatorView.swift; path = "../SPWaterWaveProgressIndicatorView-master/WaterWaveDemo_Swift/WaterWaveDemo_Swift/SPWaterProgressIndicatorView.swift"; sourceTree = "<group>"; };
 		1828CBF320356C4700300D63 /* WaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
 		1863A88A20C67F2F00CE684B /* SQLite.swift-master 2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SQLite.swift-master 2"; sourceTree = "<group>"; };
@@ -213,10 +245,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0370AB8E210C5958001D4131 /* SQLite.framework in Frameworks */,
+				0370AB85210C57B6001D4131 /* libsqlite3.tbd in Frameworks */,
+				0370AB8A210C594E001D4131 /* Floaty.framework in Frameworks */,
 				03C38B8120F4A1AD003DB681 /* KDCircularProgress.framework in Frameworks */,
 				03C38B7A20F4A0CD003DB681 /* Floaty.framework in Frameworks */,
+				0370AB86210C5946001D4131 /* KDCircularProgress.framework in Frameworks */,
 				03C38B6B20F3C24F003DB681 /* SQLite.framework in Frameworks */,
-				18222FC020EF37570022D4C6 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +333,7 @@
 		189B5C9E2011B11A0065168C = {
 			isa = PBXGroup;
 			children = (
+				0370AB92210C596D001D4131 /* libsqlite3.tbd */,
 				188538262017471500D30607 /* Entity */,
 				18AE98542015B6810020A820 /* DBHandler */,
 				189B5CA92011B11A0065168C /* Gmn Clinic */,
@@ -347,10 +383,11 @@
 		189B5CF3201201500065168C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0370AB80210C5563001D4131 /* libsqlite3.tbd */,
+				0370AB84210C57B6001D4131 /* libsqlite3.tbd */,
 				03C38B7B20F4A19F003DB681 /* KDCircularProgress.xcodeproj */,
 				03C38B6D20F4A0C6003DB681 /* Floaty.xcodeproj */,
 				03C38B5320F3C23B003DB681 /* SQLite.xcodeproj */,
-				18222FBF20EF37570022D4C6 /* libsqlite3.0.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -410,6 +447,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				0370AB89210C5946001D4131 /* PBXTargetDependency */,
+				0370AB8D210C594E001D4131 /* PBXTargetDependency */,
+				0370AB91210C5958001D4131 /* PBXTargetDependency */,
 			);
 			name = "Gmn Clinic";
 			productName = "Gmn Clinic";
@@ -598,6 +638,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0370AB89210C5946001D4131 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "KDCircularProgress iOS";
+			targetProxy = 0370AB88210C5946001D4131 /* PBXContainerItemProxy */;
+		};
+		0370AB8D210C594E001D4131 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Floaty;
+			targetProxy = 0370AB8C210C594E001D4131 /* PBXContainerItemProxy */;
+		};
+		0370AB91210C5958001D4131 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SQLite iOS";
+			targetProxy = 0370AB90210C5958001D4131 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		189B5CAE2011B11A0065168C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -736,9 +794,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJF528ZY7W;
+				DEVELOPMENT_TEAM = NC2E9KHM5C;
 				INFOPLIST_FILE = "Gmn Clinic/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tsysinfo.GmnClinic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -754,9 +816,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJF528ZY7W;
+				DEVELOPMENT_TEAM = NC2E9KHM5C;
 				INFOPLIST_FILE = "Gmn Clinic/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tsysinfo.GmnClinic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

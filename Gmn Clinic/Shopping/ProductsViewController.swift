@@ -134,6 +134,13 @@ class ProductsViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.detailTextLabel?.text = "Rs. " + product.Price
         cell.imageView?.image = UIImage(named: "apple (4)")
         
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 0
+        cell.clipsToBounds = true
+
+        
         return cell
     }
     

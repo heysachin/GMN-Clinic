@@ -149,16 +149,36 @@ class FoodReminderViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return Reminders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath)
-        let reminder = Reminders[indexPath.row]
+        let reminder = Reminders[indexPath.section]
         print(reminder)
         cell.textLabel?.text = reminder.Diet
         cell.detailTextLabel?.text =  reminder.Day + "\t" + reminder.DietTime1
-        cell.imageView?.image = UIImage(named: "apple (4)")
+        
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 0
+        cell.clipsToBounds = true
+
         
         return cell
     }

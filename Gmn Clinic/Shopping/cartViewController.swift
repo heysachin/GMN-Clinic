@@ -56,6 +56,7 @@ class CartViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             switch action.style{
             case .default:
                 let a = CoreDataHandler.CartMemberDelete(ProductId: cartItem.productId!, ProductName: cartItem.productName!, Description: cartItem.desc!, Price: cartItem.price!, Branchno: cartItem.branchno!, OutOfStock: cartItem.outOfStock!)
+                self.cartTableView.reloadData()
                 print(a)
                 
             case .cancel:

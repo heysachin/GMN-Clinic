@@ -8,7 +8,6 @@
 
 import UIKit
 struct FoodStatus : Decodable {
-    
     let Status : String
     let MemberName :String
 }
@@ -93,9 +92,27 @@ class FoodIntakeViewController: UIViewController {
     @IBOutlet weak var serving4: SearchTextField!
     
     @IBOutlet weak var serving5: SearchTextField!
+    
     @IBOutlet weak var serving6: SearchTextField!
+    
+    @IBOutlet weak var unit1: SearchTextField!
+    
+    @IBOutlet weak var unit2: SearchTextField!
+    
+    @IBOutlet weak var unit3: SearchTextField!
+    
+    @IBOutlet weak var unit4: SearchTextField!
+    
+    @IBOutlet weak var unit5: SearchTextField!
+    
+    @IBOutlet weak var unit6: SearchTextField!
+    
+    
     var foodData: [String] = [String]()
     var servingData : [String] = [String]()
+    var unitsData : [String] = [String]()
+    var cupFood=["Green tea","Kava","Lemon Water","Black coffee","Coffee","Slim Milk","Slim Curd","Soya Milk","Almond Milk","Milk Shakes","Curd","Lassi","Butter Milk","Besan Veg Chilla","Egg Whites","Egg whites Omelette","Wheat Flakes","Muesli","Oats","Isabgol","Mix Seeds","Chia Seeds","Herb Powder","Meethi Seeds","Flax seeds","Juices","Yogurt","Daliya","Vermicilli Veg Upma","Veg Poha","Salad","Soup","Roti","Rice","Dal","Pulses","Sprouts","Vegetable","Barley","Chicken","Tofu","Wheat Pasta","Brown Rice","Mix Dal Dosa","Quinno Dal veg Khichadi","Daliya Dal Khichadi","Veg Raita","Sprouts","Soya Bean","Roasted Oats","Makhana","Jowar pop corn","Cole Slaw","Paneer Veg Cutlet","Besan Tomato Veg Omelette","Mushrooms","Boiled Chana","Horse Grain chaat"]
+    var pcFood=["Dry Thepla","Dry Thalipeeth","Idli","Dosa","Veg Utapa","Sambhar","Fruits","Khakra","Veg Paratha","Paneer Paratha","Bhakri","Veg Omelette","veg Pan cakes","Waffles","Almonds","Walnuts","Pista","Fruit","Low Fat Paneer","Egg Whites","Fish","Quinnoa","Wheat Bran","Stir fry vegetables","Kadhi","Thepla","Chutney","Chana","Roasted Moong","Hung Curd Dip","Corn Salad","Lentil Chaat","Kurmura","Roasted Chiwda","Lowar Bajra Puff","Veg Bhel","Jowar Dhani","Granola Bar","Paneer Sandwich","Veg Sandwich","Khandvi","Patra","Plain Dry Khakra"]
     var stat = [FoodStatus]()
     public var date : String = ""
     public var pref : String = ""
@@ -127,29 +144,25 @@ class FoodIntakeViewController: UIViewController {
         spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
         spinnerIndicator.color = UIColor.black
         spinnerIndicator.startAnimating()
-        
         alertController.view.addSubview(spinnerIndicator)
+        
+        
         food1.layer.borderWidth = 0.4
         food1.layer.cornerRadius = 0
         food1.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
-
         food2.layer.borderWidth = 0.4
         food2.layer.cornerRadius = 0
         food2.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
-
-         food3.layer.borderWidth = 0.4
+        food3.layer.borderWidth = 0.4
         food3.layer.cornerRadius = 0
         food3.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
-
- food4.layer.borderWidth = 0.4
+        food4.layer.borderWidth = 0.4
         food4.layer.cornerRadius = 0
         food4.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
-
         food5.layer.borderWidth = 0.4
         food5.layer.cornerRadius = 0
         food5.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
-
- food6.layer.borderWidth = 0.4
+        food6.layer.borderWidth = 0.4
         food6.layer.cornerRadius = 0
         food6.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
         
@@ -157,22 +170,43 @@ class FoodIntakeViewController: UIViewController {
         serving1.layer.borderWidth = 0.4
         serving1.layer.cornerRadius = 0
         serving1.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
- serving2.layer.borderWidth = 0.4
+        serving2.layer.borderWidth = 0.4
         serving2.layer.cornerRadius = 0
         serving2.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
- serving3.layer.borderWidth = 0.4
+        serving3.layer.borderWidth = 0.4
         serving3.layer.cornerRadius = 0
         serving3.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
- serving4.layer.borderWidth = 0.4
+        serving4.layer.borderWidth = 0.4
         serving4.layer.cornerRadius = 0
         serving4.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
- serving5.layer.borderWidth = 0.4
+        serving5.layer.borderWidth = 0.4
         serving5.layer.cornerRadius = 0
         serving5.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
- serving6.layer.borderWidth = 0.4
+        serving6.layer.borderWidth = 0.4
         serving6.layer.cornerRadius = 0
         serving6.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
-
+        
+        
+        unit1.layer.borderWidth = 0.4
+        unit1.layer.cornerRadius = 0
+        unit1.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+        unit2.layer.borderWidth = 0.4
+        unit2.layer.cornerRadius = 0
+        unit2.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+        unit3.layer.borderWidth = 0.4
+        unit3.layer.cornerRadius = 0
+        unit3.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+        unit4.layer.borderWidth = 0.4
+        unit4.layer.cornerRadius = 0
+        unit4.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+        unit5.layer.borderWidth = 0.4
+        unit5.layer.cornerRadius = 0
+        unit5.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+        unit6.layer.borderWidth = 0.4
+        unit6.layer.cornerRadius = 0
+        unit6.layer.borderColor = UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+        
+        
         foodData.append("Green tea")
         foodData.append("Kava")
         foodData.append("Lemon Water")
@@ -203,6 +237,36 @@ class FoodIntakeViewController: UIViewController {
         foodData.append("Daliya")
         foodData.append("Vermicilli Veg Upma")
         foodData.append("Veg Poha")
+        foodData.append("Salad")
+        foodData.append("Soup")
+        foodData.append("Roti")
+        foodData.append("Rice")
+        foodData.append("Dal")
+        foodData.append("Pulses")
+        foodData.append("Sprouts")
+        foodData.append("Vegetable")
+        foodData.append("Barley")
+        foodData.append("Chicken")
+        foodData.append("Tofu")
+        foodData.append("Wheat Pasta")
+        foodData.append("Brown Rice")
+        foodData.append("Mix Dal Dosa")
+        foodData.append("Quinno Dal veg Khichadi")
+        foodData.append("Daliya Dal Khichadi")
+        foodData.append("Veg Raita")
+        foodData.append("Sprouts")
+        foodData.append("Soya Bean")
+        foodData.append("Roasted Oats")
+        foodData.append("Makhana")
+        foodData.append("Jowar pop corn")
+        foodData.append("Cole Slaw")
+        foodData.append("Paneer Veg Cutlet")
+        foodData.append("Besan Tomato Veg Omelette")
+        foodData.append("Mushrooms")
+        foodData.append("Boiled Chana")
+        foodData.append("Horse Grain chaat")
+        
+        
         foodData.append("Dry Thepla")
         foodData.append("Dry Thalipeeth")
         foodData.append("Idli")
@@ -221,23 +285,6 @@ class FoodIntakeViewController: UIViewController {
         foodData.append("Walnuts")
         foodData.append("Pista")
         foodData.append("Fruit")
-        foodData.append("Salad")
-        foodData.append("Soup")
-        foodData.append("Roti")
-        foodData.append("Rice")
-        foodData.append("Dal")
-        foodData.append("Pulses")
-        foodData.append("Sprouts")
-        foodData.append("Vegetable")
-        foodData.append("Barley")
-        foodData.append("Chicken")
-        foodData.append("Tofu")
-        foodData.append("Wheat Pasta")
-        foodData.append("Brown Rice")
-        foodData.append("Mix Dal Dosa")
-        foodData.append("Quinno Dal veg Khichadi")
-        foodData.append("Daliya Dal Khichadi")
-        foodData.append("Veg Raita")
         foodData.append("Low Fat Paneer")
         foodData.append("Egg Whites")
         foodData.append("Fish")
@@ -263,134 +310,155 @@ class FoodIntakeViewController: UIViewController {
         foodData.append("Khandvi")
         foodData.append("Patra")
         foodData.append("Plain Dry Khakra")
-        foodData.append("Sprouts")
-        foodData.append("Soya Bean")
-        foodData.append("Roasted Oats")
-        foodData.append("Makhana")
-        foodData.append("Jowar pop corn")
-        foodData.append("Cole Slaw")
-        foodData.append("Paneer Veg Cutlet")
-        foodData.append("Besan Tomato Veg Omelette")
-        foodData.append("Mushrooms")
-        foodData.append("Boiled Chana")
-        foodData.append("Horse Grain chaat")
-        
-        
-      
-        
-        
-        
-        servingData.append("1/4 TSP")
-         servingData.append("1/2 TSP")
-         servingData.append("1 TSP")
-         servingData.append("1/2 TBSP")
-         servingData.append("1 TBSP")
 
+        unitsData.append("TSP")
+        unitsData.append("TBSP")
+        unitsData.append("Cup")
+        unitsData.append("Piece")
+        unitsData.append("Plate")
+        unitsData.append("Glass")
+        unitsData.append("ML")
+        unitsData.append("L")
+        
+        servingData.append("1/4")
+        servingData.append("1/2")
+        servingData.append("1")
+        servingData.append("1");
+        servingData.append("2");
+        servingData.append("3");
+        servingData.append("4");
+        servingData.append("1");
+        servingData.append("2");
+        servingData.append("3");
+        servingData.append("4");
+        servingData.append("5");
+        servingData.append("6");
+        servingData.append("7");
+        servingData.append("8");
+        servingData.append("9");
+        servingData.append("10");
+        servingData.append("100");
+        servingData.append("250");
+        servingData.append("500");
 
-         servingData.append("1/4 Cup");
-         servingData.append("1/2 Cup");
-         servingData.append("4 Bowl");
-         servingData.append("1 Cup");
-         servingData.append("2 Cup");
-         servingData.append("3 Cup");
-         servingData.append("4 Cup");
-         servingData.append("1 Piece");
-         servingData.append("2 Piece");
-         servingData.append("3 Piece");
-         servingData.append("4 Piece");
-         servingData.append("5 Piece");
-         servingData.append("6 Piece");
-         servingData.append("7 Piece");
-         servingData.append("8 Piece");
-         servingData.append("9 Piece");
-         servingData.append("10 Piece");
-         servingData.append("1 Plate");
-         servingData.append("2 Plate");
-         servingData.append("3 Plate");
-         servingData.append("4 Plate");
-         servingData.append("1 Glass");
-         servingData.append("2 Glass");
-         servingData.append("3 Glass");
-         servingData.append("4 Glass");
-         servingData.append("100 ML");
-         servingData.append("250 ML");
-         servingData.append("500 ML");
-         servingData.append("1 L");
-        
-        
-        
-        
         
         
        
         food1.filterStrings(foodData)
-       
         serving1.filterStrings(servingData)
+        unit1.filterStrings(unitsData)
         
         food2.filterStrings(foodData)
-        
         serving2.filterStrings(servingData)
-        
+        unit2.filterStrings(unitsData)
         
         food3.filterStrings(foodData)
-        
         serving3.filterStrings(servingData)
-        
+        unit3.filterStrings(unitsData)
        
         food4.filterStrings(foodData)
-        
         serving4.filterStrings(servingData)
-        
+        unit4.filterStrings(unitsData)
        
         food5.filterStrings(foodData)
-        
         serving5.filterStrings(servingData)
-        
+        unit5.filterStrings(unitsData)
+
         
         food6.filterStrings(foodData)
-       
         serving6.filterStrings(servingData)
+        unit6.filterStrings(unitsData)
         
         
+        
+    }
+    
+    @IBAction func food6Edit(_ sender: Any) {
+        if cupFood.contains(food6.text!){
+            unit6.text="Cup"
+        }
+        if pcFood.contains(food6.text!){
+            unit6.text="pc"
+        }
+    }
+    @IBAction func food5Edit(_ sender: Any) {
+        if cupFood.contains(food5.text!){
+            unit5.text="Cup"
+        }
+        if pcFood.contains(food5.text!){
+            unit5.text="pc"
+        }
+    }
+    @IBAction func food4Edit(_ sender: Any) {
+        if cupFood.contains(food4.text!){
+            unit4.text="Cup"
+        }
+        if pcFood.contains(food4.text!){
+            unit4.text="pc"
+        }
+    }
+    @IBAction func food3Edit(_ sender: Any) {
+        if cupFood.contains(food3.text!){
+            unit3.text="Cup"
+        }
+        if pcFood.contains(food3.text!){
+            unit3.text="pc"
+        }
+    }
+    @IBAction func food2Edit(_ sender: Any) {
+        if cupFood.contains(food2.text!){
+            unit2.text="Cup"
+        }
+        if pcFood.contains(food2.text!){
+            unit2.text="pc"
+        }
+    }
+    @IBAction func textFieldEditingDidChange(_ sender: Any){
+        
+        if cupFood.contains(food1.text!){
+            unit1.text="Cup"
+        }
+        if pcFood.contains(food1.text!){
+            unit1.text="pc"
+        }
         
     }
 
     @IBAction func onSubmit(_ sender: Any) {
         if food1.text != "" && serving1.text != ""
         {
-        if food1.text != "" && serving1.text != ""
-        {
-            flag1=true
+            if food1.text != "" && serving1.text != ""
+            {
+                flag1=true
+                
+            }
             
-        }
-        
-        if food2.text != "" && serving2.text != ""
-        {
-            flag2=true
+            if food2.text != "" && serving2.text != ""
+            {
+                flag2=true
+                
+            }
             
-        }
-        
-        if food3.text != "" && serving3.text != ""
-        {
-            flag3=true
-        }
-        
-        if food4.text != "" && serving4.text != ""
-        {
-            flag4=true
-        }
-        if food5.text != "" && serving5.text != ""
-        {
+            if food3.text != "" && serving3.text != ""
+            {
+                flag3=true
+            }
             
-            flag5=true
-            
-        }
-        if food6.text != "" && serving6.text != ""
-        {
-            flag6=true
-        }
-            
-             save();
+            if food4.text != "" && serving4.text != ""
+            {
+                flag4=true
+            }
+            if food5.text != "" && serving5.text != ""
+            {
+                
+                flag5=true
+                
+            }
+            if food6.text != "" && serving6.text != ""
+            {
+                flag6=true
+            }
+            save();
             
         }else{
             
@@ -408,34 +476,34 @@ class FoodIntakeViewController: UIViewController {
     {
         if flag1
         {
-            data = "\(String(describing: food1.text!)) - \(String(describing: serving1.text!)),\(date)"
+            data = "\(String(describing: food1.text!)) - \(String(describing: serving1.text!+self.unit1.text!)),\(date)"
         }
         if flag2
         {
-            data = "\(data)$\(String(describing: food2.text!)) - \(String(describing: serving2.text!)),\(date)"
+            data = "\(data)$\(String(describing: food2.text!)) - \(String(describing: serving2.text!+self.unit2.text!)),\(date)"
         }
         if flag3
         {
-            data = "\(data)$\(String(describing: food3.text!)) - \(String(describing: serving3.text!)),\(date)"
+            data = "\(data)$\(String(describing: food3.text!)) - \(String(describing: serving3.text!+self.unit3.text!)),\(date)"
         }
         if flag4
         {
-            data = "\(data)$\(String(describing: food4.text!)) - \(String(describing: serving4.text!)),\(date)"
+            data = "\(data)$\(String(describing: food4.text!)) - \(String(describing: serving4.text!+self.unit4.text!)),\(date)"
         }
         if flag5
         {
-            data = "\(data)$\(String(describing: food5.text!)) - \(String(describing: serving5.text!)),\(date)"
+            data = "\(data)$\(String(describing: food5.text!)) - \(String(describing: serving5.text!+self.unit5.text!)),\(date)"
         }
         if flag6
         {
-            data = "\(data)$\(String(describing: food6.text!)) - \(String(describing: serving6.text!)),\(date)"
+            data = "\(data)$\(String(describing: food6.text!)) - \(String(describing: serving6.text!+self.unit6.text!)),\(date)"
         }
 
        if showProgress(show: true)
         {
-        getData()
+            getData()
         }
-        }
+    }
     
     @IBOutlet weak var onSubmitClick: UIButton!
     
@@ -486,28 +554,28 @@ class FoodIntakeViewController: UIViewController {
                          
                                 
                                 if self.food1.text != "" {
-                             _ =   DBHandler.instance.addFoodIntake(fid: 1, ftime: self.TodayDate(), ffood: "\(self.food1.text!) - \(self.serving1.text!)")
+                             _ =   DBHandler.instance.addFoodIntake(fid: 1, ftime: self.TodayDate(), ffood: "\(self.food1.text!) - \(self.serving1.text!+" "+self.unit1.text!)")
                                }
 
                                 if self.food2.text != "" {
-                              _ =      DBHandler.instance.addFoodIntake(fid: 2, ftime: self.TodayDate(), ffood: "\(self.food2.text!) - \(self.serving2.text!)")
+                              _ =      DBHandler.instance.addFoodIntake(fid: 2, ftime: self.TodayDate(), ffood: "\(self.food2.text!) - \(self.serving2.text!+" "+self.unit2.text!)")
                                 }
                                 
                                 if self.food3.text != "" {
-                                _ =    DBHandler.instance.addFoodIntake(fid: 3, ftime: self.TodayDate(), ffood: "\(self.food3.text!) - \(self.serving3.text!)")
+                                _ =    DBHandler.instance.addFoodIntake(fid: 3, ftime: self.TodayDate(), ffood: "\(self.food3.text!) - \(self.serving3.text!+" "+self.unit3.text!)")
                                 }
                                 
                                 if self.food4.text != "" {
-                                  _ =  DBHandler.instance.addFoodIntake(fid: 4, ftime: self.TodayDate(), ffood: "\(self.food4.text!) - \(self.serving4.text!)")
+                                  _ =  DBHandler.instance.addFoodIntake(fid: 4, ftime: self.TodayDate(), ffood: "\(self.food4.text!) - \(self.serving4.text!+" "+self.unit4.text!)")
                                 }
                                 if self.food5.text != "" {
-                               _ =     DBHandler.instance.addFoodIntake(fid: 5, ftime: self.TodayDate(), ffood: "\(self.food5.text!) - \(self.serving5.text!)")
+                               _ =     DBHandler.instance.addFoodIntake(fid: 5, ftime: self.TodayDate(), ffood: "\(self.food5.text!) - \(self.serving5.text!+" "+self.unit5.text!)")
                                 }
                                 
                                 if self.food6.text != "" {
-                                 _ =   DBHandler.instance.addFoodIntake(fid: 6, ftime: self.TodayDate(), ffood: "\(self.food6.text!) - \(self.serving6.text!)")
+                                 _ =   DBHandler.instance.addFoodIntake(fid: 6, ftime: self.TodayDate(), ffood: "\(self.food6.text!) - \(self.serving6.text!+" "+self.unit6.text!)")
                                 }
-                                   self.food1.text = ""
+                                self.food1.text = ""
                                 self.food2.text = ""
                                 self.food3.text = ""
                                 self.food4.text = ""
@@ -519,10 +587,16 @@ class FoodIntakeViewController: UIViewController {
                                 self.serving4.text = ""
                                 self.serving5.text = ""
                                 self.serving6.text = ""
+                                self.unit1.text = ""
+                                self.unit2.text = ""
+                                self.unit3.text = ""
+                                self.unit4.text = ""
+                                self.unit5.text = ""
+                                self.unit6.text = ""
                                 
                                   _ = self.showProgress(show: false)
                                 self.performSegue(withIdentifier: "toMyFood", sender: self)
-                           self.view.makeToast(message: "Sucess")
+                                self.view.makeToast(message: "Sucess")
                             
                             }
                         }else{
@@ -545,12 +619,6 @@ class FoodIntakeViewController: UIViewController {
                     }
                 }
                 
-                
-                
-                
-                
-                
-                
             }
             
             // API call is Successfull
@@ -563,10 +631,6 @@ class FoodIntakeViewController: UIViewController {
                 }
             }
         })
-        
-        
-        
-        
         
         
         

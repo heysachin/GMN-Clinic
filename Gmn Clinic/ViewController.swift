@@ -72,11 +72,11 @@ class ViewController: UIViewController {
     
     
     
-    @IBOutlet weak var mobile1: UITextField!
-    @IBOutlet weak var mobile2: UITextField!
-    @IBOutlet weak var email1: UITextField!
-    @IBOutlet weak var email2: UITextField!
-    @IBOutlet weak var address: UITextField!
+    @IBOutlet weak var mobile1: UILabel!
+    @IBOutlet weak var mobile2: UILabel!
+    @IBOutlet weak var email1: UILabel!
+    @IBOutlet weak var email2: UILabel!
+    @IBOutlet weak var address: UILabel!
     
     
     @IBOutlet weak var stack1: UIStackView!
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
     }
     @IBAction func onAboveClick(_ sender: Any) {
         
-        print("On Above Clicked")
+//        performSegue(withIdentifier: "aboutSeque", sender: self)
         
     }
     @IBAction func onYoutubeClick(_ sender: Any) {
@@ -250,6 +250,7 @@ class ViewController: UIViewController {
         })
         floaty.addItem("About", icon: UIImage(named: "earth-globe (1)")!, handler: { item in
             
+            self.performSegue(withIdentifier: "aboutSeque", sender: self)
             
         })
         floaty.addItem("Help", icon: UIImage(named: "question")!, handler: { item in
