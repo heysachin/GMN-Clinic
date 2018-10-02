@@ -7,13 +7,105 @@
 //
 
 import UIKit
+import DatePickerDialog
 
 class MyActivityTableViewController: UITableViewController {
-
+    var diet : [Activity] = []
+    
+    @IBAction func submitFoodHistory(_ sender: Any) {
+        var from=""
+        var to=""
+        var option=""
+        if textField.text != ""{
+            from=String(textField.text!)
+        }else{
+            showAlert(title: "No Date Selected", msg: "Please Select From Date")
+        }
+        
+        if toTextField.text != ""{
+            to=String(toTextField.text!)
+        }else{
+            showAlert(title: "No Date Selected", msg: "Please Select To Date")
+        }
+        
+        if optionSelected.text != ""{
+            option=String(optionSelected.text!)
+        }else{
+            showAlert(title: "No Option Selected", msg: "Please Select Time")
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        if (from != "" && to != "" && option != ""){
+            var dates = generateDates(between: dateFormatter.date(from: from), and: dateFormatter.date(from: to), byAdding: Calendar.Component.day)
+            for date in dates{
+                print(dateFormatter.string(from: date))
+                diet+=DBHandler.instance.getActivity(date : dateFormatter.string(from: date))
+                print(diet)
+                self.tableView.reloadData()
+            }
+            
+        }
+        
+    }
+    
+    func generateDates(between startDate: Date?, and endDate: Date?, byAdding: Calendar.Component) -> [Date] {
+        
+        var dates = [Date]()
+        guard var date = startDate, let endDate = endDate else {
+            return []
+        }
+        while date < endDate {
+            date = Calendar.current.date(byAdding: byAdding, value: 1, to: date)!
+            dates.append(date)
+        }
+        return dates
+    }
+    
+    @IBOutlet weak var optionSelected: UITextField!
+    @IBAction func downloadSheet(_ sender: Any)
+    {
+        
+        
+        
+        let alert = UIAlertController(title: "Select Option",message: "", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "All", style: .default , handler:{ (UIAlertAction)in
+            self.optionSelected.text="All"
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Morning", style: .default , handler:{ (UIAlertAction)in
+            self.optionSelected.text="Morning"
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Noon", style: .default , handler:{ (UIAlertAction)in
+            self.optionSelected.text="Noon"
+        }))
+        alert.addAction(UIAlertAction(title: "Evening", style: .default , handler:{ (UIAlertAction)in
+            self.optionSelected.text="Evening"
+        }))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
+    
+    
+    @IBAction func fromDate(_ sender: Any) {
+        fromDateDialog()
+    }
+    
+    @IBAction func toDate(_ sender: Any) {
+        toDateDialog()
+    }
+    @IBOutlet weak var toTextField: UITextField!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var viewOnTop: UIView!
+    
+    
     
     var alertController: UIAlertController!
     var spinnerIndicator: UIActivityIndicatorView!
-    var diet : [Activity] = []
+
     
     
     override func viewDidLoad() {
@@ -28,6 +120,28 @@ class MyActivityTableViewController: UITableViewController {
         diet = DBHandler.instance.getActivity(date : TodayDate())
         self.tableView.reloadData()
         
+    }
+    
+    public func toDateDialog() {
+        DatePickerDialog().show("DatePicker", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) {
+            (date) -> Void in
+            if let dt = date {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "MM/dd/yyyy"
+                self.toTextField.text = formatter.string(from: dt)
+            }
+        }
+    }
+    
+    public func fromDateDialog() {
+        DatePickerDialog().show("DatePicker", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) {
+            (date) -> Void in
+            if let dt = date {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "MM/dd/yyyy"
+                self.textField.text = formatter.string(from: dt)
+            }
+        }
     }
     public func TodayDate() -> String
         

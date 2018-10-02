@@ -18,6 +18,7 @@ class DietTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title="Diet"
         
          diet = DBHandler.instance.getDiet()
 

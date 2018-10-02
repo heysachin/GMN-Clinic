@@ -15,6 +15,13 @@ class MyFoodTableViewCell: UITableViewCell {
         // Initialization code
     }
     @IBOutlet weak var food: UILabel!
+    @IBOutlet weak var amount: UILabel!
+    @IBOutlet weak var unit: UILabel!
+    @IBOutlet weak var calorie: UILabel!
+    @IBOutlet weak var carbs: UILabel!
+    @IBOutlet weak var protein: UILabel!
+    @IBOutlet weak var fat: UILabel!
+    
     
     @IBOutlet weak var time: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {

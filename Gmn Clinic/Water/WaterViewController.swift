@@ -89,6 +89,7 @@ class WaterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title="Water"
         // Do any additional setup after loading the view, typically from a nib.
         var data:[LoginEntity]?
         data=CoreDataHandler.featchObject()

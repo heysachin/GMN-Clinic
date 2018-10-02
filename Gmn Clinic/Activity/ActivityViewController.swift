@@ -9,6 +9,7 @@
 import UIKit
 
 class ActivityViewController: UIViewController {
+    
 
     @IBOutlet weak var act1: SearchTextField!
     
@@ -84,7 +85,7 @@ class ActivityViewController: UIViewController {
     
     
     var memberNo : String = ""
-    
+    public var date : String = ""
     var data : String = ""
     var flag1: Bool = false;
     var flag2: Bool = false;
@@ -99,6 +100,7 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title="Excercise"
         var data:[LoginEntity]?
         data=CoreDataHandler.featchObject()
         self.hideKeyboardWhenTappedAround()
@@ -116,7 +118,8 @@ class ActivityViewController: UIViewController {
         alertController.view.addSubview(spinnerIndicator)
         
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: "jumping-to-the-water.png"), for: UIControlState.normal)
+//        button.setImage(UIImage.init(named: "jumping-to-the-water.png"), for: UIControlState.normal)
+        button.setTitle("History", for: UIControlState.normal)
         button.addTarget(self, action:#selector(ActivityViewController
             .callBackMethod), for:.touchUpInside)
         button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30) //CGRectMake(0, 0, 30, 30)
@@ -185,15 +188,11 @@ class ActivityViewController: UIViewController {
 
         
     
-        durData.append("15 Minutes")
-        durData.append("30 Minutes");
-        durData.append("45 Minutes");
-        durData.append("60 Minutes");
-        durData.append("90 Minutes");
-        durData.append("6 Hours");
-        durData.append("8 Hours");
-        durData.append("10 Hours");
-        durData.append("12 Hours");
+        durData.append("15")
+        durData.append("30");
+        durData.append("45");
+        durData.append("60");
+        durData.append("90");
 
         
         dur1.filterStrings(durData)
@@ -219,6 +218,8 @@ class ActivityViewController: UIViewController {
     }
     
     @IBAction func onSubmitClicked(_ sender: Any) {
+        
+        print(date)
         
         if act1.text != "" && dur1.text != ""
         {
@@ -258,36 +259,36 @@ class ActivityViewController: UIViewController {
             
         }else{
             
-            view.makeToast(message: "Please Enter Atleast 1 Diet")
+            view.makeToast(message: "Please Enter Atleast 1 Duration")
         }
     }
     
-    
+    let minut=" Minutes"
     public func save()
     {
         if flag1
         {
-            data = "\(String(describing: act1.text!)) - \(String(describing: dur1.text!)),\(TodayDate())"
+            data = "\(String(describing: act1.text!)) - \(String(describing: dur1.text!)+minut),\(date)"
         }
         if flag2
         {
-            data = "\(data)$\(String(describing: act2.text!)) - \(String(describing: dur2.text!)),\(TodayDate())"
+            data = "\(data)$\(String(describing: act2.text!)) - \(String(describing: dur2.text!)+minut),\(date)"
         }
         if flag3
         {
-            data = "\(data)$\(String(describing: act3.text!)) - \(String(describing: dur3.text!)),\(TodayDate())"
+            data = "\(data)$\(String(describing: act3.text!)) - \(String(describing: dur3.text!)+minut),\(date)"
         }
         if flag4
         {
-            data = "\(data)$\(String(describing: act4.text!)) - \(String(describing: dur4.text!)),\(TodayDate())"
+            data = "\(data)$\(String(describing: act4.text!)) - \(String(describing: dur4.text!)+minut),\(date)"
         }
         if flag5
         {
-            data = "\(data)$\(String(describing: act5.text!)) - \(String(describing: dur5.text!)),\(TodayDate())"
+            data = "\(data)$\(String(describing: act5.text!)) - \(String(describing: dur5.text!)+minut),\(date)"
         }
         if flag6
         {
-            data = "\(data)$\(String(describing: act6.text!)) - \(String(describing: dur6.text!)),\(TodayDate())"
+            data = "\(data)$\(String(describing: act6.text!)) - \(String(describing: dur6.text!)),\(date)"
         }
 
        if showProgress(show: true)
@@ -305,7 +306,7 @@ class ActivityViewController: UIViewController {
         
         
         
-        let url="\(GlobalURL)/SaveActivity2_6?MemberNo=\(self.memberNo)&Date_Time=\(self.TodayDate())&BranchNo=1&Activity=\(self.data)"
+        let url="\(GlobalURL)/SaveActivity2_6?MemberNo=\(self.memberNo)&Date_Time=\(self.date)&BranchNo=1&Activity=\(self.data)"
         
         let replaced = url.replacingOccurrences(of: " ", with: "%20")
         
@@ -339,26 +340,26 @@ class ActivityViewController: UIViewController {
                                 
                                 
                                 if self.act1.text != "" {
-                                    _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(String(describing: self.act1.text!)) - \(String(describing: self.dur1.text!)) ")
+                                    _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(String(describing: self.act1.text!)) - \(String(describing: self.dur1.text!)+self.minut) ")
                                }
 
                                 if self.act2.text != "" {
-                              _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(self.act2.text!) - \(self.dur2.text!) ")
+                                    _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(self.act2.text!) - \(self.dur2.text!+self.minut) ")
                                 }
                                 
                                 if self.act3.text != "" {
-                                _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(self.act3.text!) - \(self.dur3.text!) ")
+                                    _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(self.act3.text!) - \(self.dur3.text!+self.minut) ")
                                 }
                                 
                                 if self.act4.text != "" {
-                                 _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(self.act4.text!) - \(self.dur4.text!) ")
+                                    _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(self.act4.text!) - \(self.dur4.text!+self.minut) ")
                                 }
                                 if self.act5.text != "" {
-                               _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(self.act5.text!) - \(self.dur5.text!) ")
+                                    _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(self.act5.text!) - \(self.dur5.text!+self.minut) ")
                                 }
                                 
                                 if self.act6.text != "" {
-                                 _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(self.act6.text!) - \(self.dur6.text!) ")
+                                    _ =   DBHandler.instance.addActivity(time: self.TodayDate(), activity: "\(self.act6.text!) - \(self.dur6.text!+self.minut) ")
                                 }
                                         self.act1.text = ""
                                 self.act2.text = ""

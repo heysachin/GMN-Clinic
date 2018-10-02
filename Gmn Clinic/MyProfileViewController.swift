@@ -62,6 +62,7 @@ class MyProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title="Profile"
         var data:[MemberEntity]?
         data=CoreDataHandler.featchMemberObject()
         

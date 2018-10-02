@@ -70,6 +70,7 @@ class ProductsViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title="Products"
         let url="\(GlobalURL)/GetProductList?BranchNo=1"
         let replaced = url.replacingOccurrences(of: " ", with: "%20")
         

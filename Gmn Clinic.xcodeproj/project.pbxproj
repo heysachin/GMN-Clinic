@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030B56D3211A2CC800DB1945 /* ExcerciseInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B56D2211A2CC800DB1945 /* ExcerciseInViewController.swift */; };
+		03453379211F57A4007C50B5 /* DatePickerDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03453363211F54D1007C50B5 /* DatePickerDialog.framework */; };
+		0345337A211F9769007C50B5 /* DatePickerDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03453357211F5481007C50B5 /* DatePickerDialog.framework */; };
+		0345337B211F9769007C50B5 /* DatePickerDialog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03453357211F5481007C50B5 /* DatePickerDialog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0370AB85210C57B6001D4131 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0370AB84210C57B6001D4131 /* libsqlite3.tbd */; };
 		0370AB86210C5946001D4131 /* KDCircularProgress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B8020F4A19F003DB681 /* KDCircularProgress.framework */; };
 		0370AB87210C5946001D4131 /* KDCircularProgress.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03C38B8020F4A19F003DB681 /* KDCircularProgress.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -68,6 +72,55 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		03453356211F5481007C50B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03453350211F5480007C50B5 /* DatePickerDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BDE05A31D8F3AF000DEF7F3;
+			remoteInfo = DatePickerDialog;
+		};
+		03453358211F5481007C50B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03453350211F5480007C50B5 /* DatePickerDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BDE05AC1D8F3AF000DEF7F3;
+			remoteInfo = DatePickerDialogTests;
+		};
+		0345335A211F5481007C50B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03453350211F5480007C50B5 /* DatePickerDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4B1E9F371D8F3C9A00C1EF25;
+			remoteInfo = DatePickerDialogExample;
+		};
+		03453362211F54D1007C50B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0345335C211F54D0007C50B5 /* DatePickerDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BDE05A31D8F3AF000DEF7F3;
+			remoteInfo = DatePickerDialog;
+		};
+		03453364211F54D1007C50B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0345335C211F54D0007C50B5 /* DatePickerDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BDE05AC1D8F3AF000DEF7F3;
+			remoteInfo = DatePickerDialogTests;
+		};
+		03453366211F54D1007C50B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0345335C211F54D0007C50B5 /* DatePickerDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4B1E9F371D8F3C9A00C1EF25;
+			remoteInfo = DatePickerDialogExample;
+		};
+		0345337C211F9769007C50B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03453350211F5480007C50B5 /* DatePickerDialog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BDE05A21D8F3AF000DEF7F3;
+			remoteInfo = DatePickerDialog;
+		};
 		0370AB88210C5946001D4131 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 03C38B7B20F4A19F003DB681 /* KDCircularProgress.xcodeproj */;
@@ -173,6 +226,7 @@
 			files = (
 				0370AB87210C5946001D4131 /* KDCircularProgress.framework in Embed Frameworks */,
 				0370AB8B210C594E001D4131 /* Floaty.framework in Embed Frameworks */,
+				0345337B211F9769007C50B5 /* DatePickerDialog.framework in Embed Frameworks */,
 				0370AB8F210C5958001D4131 /* SQLite.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -181,6 +235,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		030B56D2211A2CC800DB1945 /* ExcerciseInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseInViewController.swift; sourceTree = "<group>"; };
+		03453350211F5480007C50B5 /* DatePickerDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DatePickerDialog.xcodeproj; path = "../../../Downloads/DatePickerDialog-iOS-Swift-master/DatePickerDialog.xcodeproj"; sourceTree = "<group>"; };
+		0345335C211F54D0007C50B5 /* DatePickerDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DatePickerDialog.xcodeproj; path = "DatePickerDialog-iOS-Swift-master/DatePickerDialog.xcodeproj"; sourceTree = "<group>"; };
 		0370AB80210C5563001D4131 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		0370AB84210C57B6001D4131 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libsqlite3.tbd; sourceTree = "<group>"; };
 		0370AB92210C596D001D4131 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libsqlite3.tbd; sourceTree = "<group>"; };
@@ -245,7 +302,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03453379211F57A4007C50B5 /* DatePickerDialog.framework in Frameworks */,
 				0370AB8E210C5958001D4131 /* SQLite.framework in Frameworks */,
+				0345337A211F9769007C50B5 /* DatePickerDialog.framework in Frameworks */,
 				0370AB85210C57B6001D4131 /* libsqlite3.tbd in Frameworks */,
 				0370AB8A210C594E001D4131 /* Floaty.framework in Frameworks */,
 				03C38B8120F4A1AD003DB681 /* KDCircularProgress.framework in Frameworks */,
@@ -258,6 +317,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03453351211F5480007C50B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03453357211F5481007C50B5 /* DatePickerDialog.framework */,
+				03453359211F5481007C50B5 /* DatePickerDialogTests.xctest */,
+				0345335B211F5481007C50B5 /* DatePickerDialogExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0345335D211F54D0007C50B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03453363211F54D1007C50B5 /* DatePickerDialog.framework */,
+				03453365211F54D1007C50B5 /* DatePickerDialogTests.xctest */,
+				03453367211F54D1007C50B5 /* DatePickerDialogExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		03C38B5420F3C23B003DB681 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +412,7 @@
 		189B5C9E2011B11A0065168C = {
 			isa = PBXGroup;
 			children = (
+				03453350211F5480007C50B5 /* DatePickerDialog.xcodeproj */,
 				0370AB92210C596D001D4131 /* libsqlite3.tbd */,
 				188538262017471500D30607 /* Entity */,
 				18AE98542015B6810020A820 /* DBHandler */,
@@ -383,6 +463,7 @@
 		189B5CF3201201500065168C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0345335C211F54D0007C50B5 /* DatePickerDialog.xcodeproj */,
 				0370AB80210C5563001D4131 /* libsqlite3.tbd */,
 				0370AB84210C57B6001D4131 /* libsqlite3.tbd */,
 				03C38B7B20F4A19F003DB681 /* KDCircularProgress.xcodeproj */,
@@ -427,6 +508,7 @@
 				18FC601720345FAB000B9E97 /* ActivityViewController.swift */,
 				18A2765C20526570007A8FA5 /* MyActivityTableViewController.swift */,
 				18A2765E205265F2007A8FA5 /* MyActivityTableViewCell.swift */,
+				030B56D2211A2CC800DB1945 /* ExcerciseInViewController.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -450,6 +532,7 @@
 				0370AB89210C5946001D4131 /* PBXTargetDependency */,
 				0370AB8D210C594E001D4131 /* PBXTargetDependency */,
 				0370AB91210C5958001D4131 /* PBXTargetDependency */,
+				0345337D211F9769007C50B5 /* PBXTargetDependency */,
 			);
 			name = "Gmn Clinic";
 			productName = "Gmn Clinic";
@@ -485,6 +568,14 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 0345335D211F54D0007C50B5 /* Products */;
+					ProjectRef = 0345335C211F54D0007C50B5 /* DatePickerDialog.xcodeproj */;
+				},
+				{
+					ProductGroup = 03453351211F5480007C50B5 /* Products */;
+					ProjectRef = 03453350211F5480007C50B5 /* DatePickerDialog.xcodeproj */;
+				},
+				{
 					ProductGroup = 03C38B6E20F4A0C6003DB681 /* Products */;
 					ProjectRef = 03C38B6D20F4A0C6003DB681 /* Floaty.xcodeproj */;
 				},
@@ -505,6 +596,48 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		03453357211F5481007C50B5 /* DatePickerDialog.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DatePickerDialog.framework;
+			remoteRef = 03453356211F5481007C50B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03453359211F5481007C50B5 /* DatePickerDialogTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DatePickerDialogTests.xctest;
+			remoteRef = 03453358211F5481007C50B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0345335B211F5481007C50B5 /* DatePickerDialogExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = DatePickerDialogExample.app;
+			remoteRef = 0345335A211F5481007C50B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03453363211F54D1007C50B5 /* DatePickerDialog.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DatePickerDialog.framework;
+			remoteRef = 03453362211F54D1007C50B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03453365211F54D1007C50B5 /* DatePickerDialogTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DatePickerDialogTests.xctest;
+			remoteRef = 03453364211F54D1007C50B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03453367211F54D1007C50B5 /* DatePickerDialogExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = DatePickerDialogExample.app;
+			remoteRef = 03453366211F54D1007C50B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		03C38B5E20F3C23B003DB681 /* SQLite.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -617,6 +750,7 @@
 				189B5CAD2011B11A0065168C /* ViewController.swift in Sources */,
 				1885382A2017491A00D30607 /* Diet.swift in Sources */,
 				1811A6C62031B7F4004A6E08 /* Floaty.swift in Sources */,
+				030B56D3211A2CC800DB1945 /* ExcerciseInViewController.swift in Sources */,
 				18A2765D20526570007A8FA5 /* MyActivityTableViewController.swift in Sources */,
 				18AFA7D120383773009D7BF4 /* SocialMediaController.swift in Sources */,
 				1811A6C72031B7F4004A6E08 /* FloatyItem.swift in Sources */,
@@ -639,6 +773,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0345337D211F9769007C50B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DatePickerDialog;
+			targetProxy = 0345337C211F9769007C50B5 /* PBXContainerItemProxy */;
+		};
 		0370AB89210C5946001D4131 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "KDCircularProgress iOS";

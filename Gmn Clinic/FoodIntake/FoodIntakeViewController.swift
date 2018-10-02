@@ -11,8 +11,70 @@ struct FoodStatus : Decodable {
     let Status : String
     let MemberName :String
 }
-class FoodIntakeViewController: UIViewController {
+class FoodIntakeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    @IBOutlet weak var topViewHeight: NSLayoutConstraint!
+    var yesDate:Int64 = 0
+    var diet: [FoodIntake] = []
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if diet.count==0{
+            return 0
+        }
+        return diet.count+1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row==0{
+            return 15
+        }
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myfoodcell", for: indexPath) as! MyFoodTableViewCell
+        if indexPath.row==0{
+            cell.food.text = "Food"
+            cell.amount.text="Time"
+            cell.unit.text="Sr. No."
+            cell.unit.layer.borderColor=UIColor.init(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1).cgColor
+            cell.amount.layer.borderColor=UIColor.init(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1).cgColor
+            cell.food.layer.borderColor=UIColor.init(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1).cgColor
+        }else{
+            let entry = diet[indexPath.row-1]
+            cell.food.text = entry.food
+            if entry.time==TodayDate(){
+                cell.amount.text="Today 09:00"
+            }else if entry.time==yesterdaysDate(){
+                cell.amount.text="Yesterday 09:00"
+            }else {
+                cell.amount.text="\(entry.time) 09:00"
+            }
+            cell.unit.text=String(indexPath.row)
+            cell.unit.layer.borderColor=UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+            cell.amount.layer.borderColor=UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+            cell.food.layer.borderColor=UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+        }
+        cell.food.layer.borderWidth=1
+        cell.amount.layer.borderWidth=1
+        cell.unit.layer.borderWidth=1
+        
+        cell.layer.cornerRadius = 5
+        cell.layer.shadowOffset = CGSize(width: -1, height: 1)
+        cell.layer.borderWidth=0.4
+        
+        return cell
+    }
 
+    @IBOutlet weak var tableView: UITableView!
     var alertController: UIAlertController!
     var spinnerIndicator: UIActivityIndicatorView!
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
@@ -22,6 +84,20 @@ class FoodIntakeViewController: UIViewController {
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
         )
+    }
+    
+    public func yesterdaysDate() -> String
+        
+    {
+        
+        
+        let yesterday = Calendar.current.date(byAdding: .day, value: Int(yesDate), to: Date())
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM"
+        let todaysDate = dateFormatter.string(from: yesterday!)
+        
+        return todaysDate
+        
     }
     
     func showProgress(show:Bool) -> Bool {
@@ -107,6 +183,7 @@ class FoodIntakeViewController: UIViewController {
     
     @IBOutlet weak var unit6: SearchTextField!
     
+    @IBOutlet weak var TopTable: UIView!
     
     var foodData: [String] = [String]()
     var servingData : [String] = [String]()
@@ -118,7 +195,15 @@ class FoodIntakeViewController: UIViewController {
     public var pref : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        diet = DBHandler.instance.getFoodIntake(date : date)
+        self.tableView.reloadData()
         
+        
+        topViewHeight.constant=CGFloat(min(5,diet.count+1))*15
+        
+        
+        
+        self.title="Intake"
         var data:[LoginEntity]?
         data=CoreDataHandler.featchObject()
         self.hideKeyboardWhenTappedAround()
@@ -322,11 +407,6 @@ class FoodIntakeViewController: UIViewController {
         
         servingData.append("1/4")
         servingData.append("1/2")
-        servingData.append("1")
-        servingData.append("1");
-        servingData.append("2");
-        servingData.append("3");
-        servingData.append("4");
         servingData.append("1");
         servingData.append("2");
         servingData.append("3");
@@ -458,6 +538,7 @@ class FoodIntakeViewController: UIViewController {
             {
                 flag6=true
             }
+            tableView.reloadData()
             save();
             
         }else{
@@ -467,11 +548,23 @@ class FoodIntakeViewController: UIViewController {
     }
     
     @objc func callBackMethod() {
-        
+        tableView.reloadData()
        performSegue(withIdentifier: "toMyFood", sender: self)
         //toMyActivity
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is MyFoodTableViewController
+        {
+            let vc = segue.destination as? MyFoodTableViewController
+            vc?.date = self.date
+        }
+    }
+    
+    
     public func save()
     {
         if flag1
@@ -505,10 +598,7 @@ class FoodIntakeViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var onSubmitClick: UIButton!
-    
     public func TodayDate() -> String
-        
     {
         
         
@@ -520,6 +610,23 @@ class FoodIntakeViewController: UIViewController {
         return todaysDate
         
     }
+    
+    func uicolorFromHex(rgbValue:UInt32)->UIColor{
+        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+        let blue = CGFloat(rgbValue & 0xFF)/256.0
+        return UIColor(red:red, green:green, blue:blue, alpha:1.0)
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    @IBOutlet weak var onSubmitClick: UIButton!
     
       func getData()  {
         
@@ -554,26 +661,26 @@ class FoodIntakeViewController: UIViewController {
                          
                                 
                                 if self.food1.text != "" {
-                             _ =   DBHandler.instance.addFoodIntake(fid: 1, ftime: self.TodayDate(), ffood: "\(self.food1.text!) - \(self.serving1.text!+" "+self.unit1.text!)")
+                             _ =   DBHandler.instance.addFoodIntake(fid: 1, ftime: self.date, ffood: "\(self.food1.text!) - \(self.serving1.text!+" "+self.unit1.text!)")
                                }
 
                                 if self.food2.text != "" {
-                              _ =      DBHandler.instance.addFoodIntake(fid: 2, ftime: self.TodayDate(), ffood: "\(self.food2.text!) - \(self.serving2.text!+" "+self.unit2.text!)")
+                              _ =      DBHandler.instance.addFoodIntake(fid: 2, ftime: self.date, ffood: "\(self.food2.text!) - \(self.serving2.text!+" "+self.unit2.text!)")
                                 }
                                 
                                 if self.food3.text != "" {
-                                _ =    DBHandler.instance.addFoodIntake(fid: 3, ftime: self.TodayDate(), ffood: "\(self.food3.text!) - \(self.serving3.text!+" "+self.unit3.text!)")
+                                _ =    DBHandler.instance.addFoodIntake(fid: 3, ftime: self.date, ffood: "\(self.food3.text!) - \(self.serving3.text!+" "+self.unit3.text!)")
                                 }
                                 
                                 if self.food4.text != "" {
-                                  _ =  DBHandler.instance.addFoodIntake(fid: 4, ftime: self.TodayDate(), ffood: "\(self.food4.text!) - \(self.serving4.text!+" "+self.unit4.text!)")
+                                  _ =  DBHandler.instance.addFoodIntake(fid: 4, ftime: self.date, ffood: "\(self.food4.text!) - \(self.serving4.text!+" "+self.unit4.text!)")
                                 }
                                 if self.food5.text != "" {
-                               _ =     DBHandler.instance.addFoodIntake(fid: 5, ftime: self.TodayDate(), ffood: "\(self.food5.text!) - \(self.serving5.text!+" "+self.unit5.text!)")
+                               _ =     DBHandler.instance.addFoodIntake(fid: 5, ftime: self.date, ffood: "\(self.food5.text!) - \(self.serving5.text!+" "+self.unit5.text!)")
                                 }
                                 
                                 if self.food6.text != "" {
-                                 _ =   DBHandler.instance.addFoodIntake(fid: 6, ftime: self.TodayDate(), ffood: "\(self.food6.text!) - \(self.serving6.text!+" "+self.unit6.text!)")
+                                 _ =   DBHandler.instance.addFoodIntake(fid: 6, ftime: self.date, ffood: "\(self.food6.text!) - \(self.serving6.text!+" "+self.unit6.text!)")
                                 }
                                 self.food1.text = ""
                                 self.food2.text = ""

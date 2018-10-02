@@ -8,7 +8,68 @@
 
 import UIKit
 
-class FoodInMenuViewController: UIViewController {
+class FoodInMenuViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
+    @IBOutlet weak var topViewHeight: NSLayoutConstraint!
+    
+    var diet: [FoodIntake] = []
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return diet.count+1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row==0{
+            return 15
+        }
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myfoodcell", for: indexPath) as! MyFoodTableViewCell
+        if indexPath.row==0{
+            cell.food.text = "Food Name"
+            cell.calorie.text="Cal"
+            cell.carbs.text="Carbs"
+            cell.fat.text="Fat"
+            cell.protein.text="Prot"
+            cell.calorie.layer.borderColor=UIColor.init(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1).cgColor
+            cell.carbs.layer.borderColor=UIColor.init(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1).cgColor
+            cell.fat.layer.borderColor=UIColor.init(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1).cgColor
+            cell.protein.layer.borderColor=UIColor.init(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1).cgColor
+            cell.food.layer.borderColor=UIColor.init(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1).cgColor
+        }else{
+            let entry = diet[indexPath.row-1]
+            cell.food.text = entry.food
+            cell.calorie.text="0"
+            cell.carbs.text="0"
+            cell.fat.text="0"
+            cell.protein.text="0"
+            cell.calorie.layer.borderColor=UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+            cell.carbs.layer.borderColor=UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+            cell.food.layer.borderColor=UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+            cell.fat.layer.borderColor=UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+            cell.protein.layer.borderColor=UIColor.init(red:74/255.0, green:191/255.0, blue:212/255.0, alpha: 1).cgColor
+        }
+        cell.food.layer.borderWidth=1
+        cell.food.layer.borderWidth=1
+        cell.calorie.layer.borderWidth=1
+        cell.carbs.layer.borderWidth=0.8
+        cell.fat.layer.borderWidth=1
+        cell.protein.layer.borderWidth=1
+        
+        return cell
+    }
+    
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var dateLable: UILabel!
     var yesDate:Int64 = 0
@@ -21,10 +82,12 @@ class FoodInMenuViewController: UIViewController {
         
         if yesDate == 0
         {
+            _ = yesterdaysDate()
             dateLable.text = "Today"
             
         }else if yesDate == -1
         {
+            _ = yesterdaysDate()
             dateLable.text = "Yesterday"
             
         }else{
@@ -38,10 +101,12 @@ class FoodInMenuViewController: UIViewController {
         yesDate = yesDate + 1
         if yesDate == 0
         {
+            _ = yesterdaysDate()
             dateLable.text = "Today"
             
         }else if yesDate == -1
         {
+            _ = yesterdaysDate()
             dateLable.text = "Yesterday"
             
         }else{
@@ -97,7 +162,11 @@ class FoodInMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        diet = DBHandler.instance.getFoodIntake(date : TodayDate())
+        self.tableView.reloadData()
+        self.title="Intake"
+        topViewHeight.constant=CGFloat(min(5,diet.count))*50
+
         
         dateView.layer.cornerRadius = 8
         dateView.layer.borderWidth = 1
@@ -157,16 +226,32 @@ class FoodInMenuViewController: UIViewController {
             vc?.date = self.date
         }
     }
-   
+    public func TodayDate() -> String
+    {
+        
+        
+        let yesterday = Calendar.current.date(byAdding: .day, value: 0, to: Date())
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let todaysDate = dateFormatter.string(from: yesterday!)
+        return todaysDate
+        
+    }
     public func yesterdaysDate() -> String
 
     {
     
         
+        
         let yesterday = Calendar.current.date(byAdding: .day, value: Int(yesDate), to: Date())
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        var todaysDate = dateFormatter.string(from: yesterday!)
+        diet = DBHandler.instance.getFoodIntake(date : todaysDate)
+        self.tableView.reloadData()
+    
         dateFormatter.dateFormat = "dd MMM"
-        let todaysDate = dateFormatter.string(from: yesterday!)
+        todaysDate = dateFormatter.string(from: yesterday!)
     
         return todaysDate
         
@@ -180,7 +265,6 @@ class FoodInMenuViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         let todaysDate = dateFormatter.string(from: yesterday!)
-        
         return todaysDate
         
     }

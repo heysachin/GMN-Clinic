@@ -73,7 +73,7 @@ class CartViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(cartItems?.count)
+        self.title="Cart"
         print(cartItems!)
         let cartItems2=CoreDataHandler.fetchCartObject()
         cartTableView.reloadData()

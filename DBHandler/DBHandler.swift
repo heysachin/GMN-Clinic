@@ -85,8 +85,9 @@ class DBHandler{
         }
     }
     
-        //db.execSQL("CREATE TABLE Foods (id INTEGER PRIMARY KEY,data TEXT,cat text,energy text,prot text ,carb text,fat text,unit text)");
-    
+//    func createFoodPlan(){
+//        db.execSQL("CREATE TABLE Foods (id INTEGER PRIMARY KEY,data TEXT,cat text,energy text,prot text ,carb text,fat text,unit text)");
+//    }
     
     //MARK: foods
     private let foods = Table("foodsdata")
@@ -100,6 +101,7 @@ class DBHandler{
             try db!.run(foods.create(ifNotExists: true) { table in
                 table.column(fid,primaryKey: true)
                 table.column(fdata)
+                
                 
                         })
             print("Created Customer table")
@@ -145,13 +147,13 @@ class DBHandler{
             print ("Unable to open database")
         }
         
-       createFoodIntakeTable()
-      createDietTable()
+    createFoodIntakeTable()
+    createDietTable()
     createFoodsTable()
     createActivityTable()
     createWaterTable()
         
-  //   createContTable()
+//     createContTable()
     }
     
     
@@ -240,6 +242,8 @@ class DBHandler{
         
         return  foodinta
     }
+    
+    
     
     
     func deleteFoodIntake(fid: Int64) -> Bool {
@@ -390,6 +394,25 @@ class DBHandler{
         return  foodinta
     }
     
+    //MARK: Foods Querys
+    func getFoodTest() -> [Activity] {
+        var foodinta = [Activity]()
+        
+        do {
+            for row in (try db!.prepare("SELECT Time,Activity FROM activity")) {
+                print(row)
+                foodinta.append(Activity.init(id: 0, time: row[0] as! String, activi: row[1] as! String))
+                print("\(String(describing: row[0]!) )  act   \(row[1]!)")
+            }
+            
+            print("Select")
+        } catch {
+            print("Select failed")
+        }
+        
+        print(foodinta)
+        return  foodinta
+    }
     
     func deleteActivity(fid: Int64) -> Bool {
         do {

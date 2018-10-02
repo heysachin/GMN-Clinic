@@ -85,6 +85,7 @@ class FoodReminderViewController: UIViewController,UITableViewDelegate,UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title="Food"
         var memberNo=""
         var data:[LoginEntity]?
         data=CoreDataHandler.featchObject()
@@ -159,11 +160,16 @@ class FoodReminderViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
+        return 10
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return Reminders.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 125.0;//Choose your custom row height
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -171,19 +177,28 @@ class FoodReminderViewController: UIViewController,UITableViewDelegate,UITableVi
         let reminder = Reminders[indexPath.section]
         print(reminder)
         cell.textLabel?.text = reminder.Diet
-        cell.detailTextLabel?.text =  reminder.Day + "\t" + reminder.DietTime1
+        var time1=reminder.DietTime1
+        let mySubstring = time1.prefix(2)
+        if Int(mySubstring)!>12{
+            time1="\(Int(mySubstring)!-12)\(time1.suffix(3)) PM"
+        }
+        else{
+            time1="\(time1) AM"
+        }
+        
+        cell.detailTextLabel?.text =  reminder.Day + "\t" + time1
         
         cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 0
-        cell.clipsToBounds = true
+        cell.layer.cornerRadius = 5
+        cell.clipsToBounds = false
 
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UIPasteboard.general.string = Reminders[indexPath.section].Diet
+        self.showAlert(title: "Text Copied to Clipboard", msg: Reminders[indexPath.section].Diet)
         
         
     }
